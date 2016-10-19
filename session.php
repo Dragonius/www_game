@@ -21,15 +21,13 @@
 	$result2=$con->query($query2);
 	$fetch2 = mysqli_fetch_assoc($result2);
 	#vertaa onko mysql session isompi kuin php unixtime
-    if( $fetch2['session'] >= $session2 ) {
-		mysqli_query($con, "update Account SET session=$session2 WHERE name='$user_check'");
+    if ( $fetch2['session'] >= $session2 ) {
+		mysqli_query($con, "update Account SET session=$session3 WHERE name='$user_check'");
 	}
-#Debug
-#	echo "fetch2 " .	$fetch2['session'] . "<br>";
-#	echo "session2 " . $session2 . "<br>" ;
-#	echo "session3 " . $session3 . "<br>" ;
-#	echo "query2 " . $query2  . "<br>";
-
+	if ( $fetch2['session'] < $session2 ) {
+		session_destroy();
+		header("location:login.php");
+	}
 #	else {
 #		session_destroy();
 #		header("location:login.php");
