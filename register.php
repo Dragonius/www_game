@@ -48,7 +48,7 @@ if ($result->num_rows < 1) {
 			//check if not Base is blank
 			if (!$Base == '') {
 				$query = "INSERT INTO Account VALUES ('','$User','$hash','$Base','0')";
-				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','$region','Sol')";
+				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','500','500','$region','Sol')";
 				$con->query($query);
 				$con->query($query2);
 				mysqli_close($con);
@@ -63,4 +63,26 @@ else {	echo "Sorry! This Username already exists";	mysqli_close($con);	}
 }
 else {	mysqli_close($con);	header("location:tiedon_lisaaminen.html");   }
 ?>
+
+
+<html>
+<head>
+<title>Register</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" >
+</head>
+<body>
+<form name="pointform" action="register.php" method="post">
+<table border="1">
+<tr BGCOLOR="#C0DCC0">
+<td>Username: <input type="text" name="User">&nbsp;</td>
+<td>Password: <input type="password" name="Pass">&nbsp;</td>
+<td>Base name: <input type="text" name="Base">&nbsp;</td>
+<td><input type="Submit" VALUE="Tallenna"></td>
+</tr>
+</table>
+</form>
+<hr>
+
+</body>
+</html>
 

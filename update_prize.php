@@ -18,12 +18,16 @@ $result = $con->query($sql);
 echo "<table border=1>";
 if ($result->num_rows > 0) {
     // output data of each row
+	echo "<tr><td>id: " . "</td><td>Name: " . "</td><td>Firepower:  " . "</td><td>Shield:  " . "</td>
+		<td>Hull: " . "</td><td>Shield Regeneration:  " . "</td><td>Hull Regeneration: " . "</td>
+		<td>Prize metal : " . "</td><td>Prize fuel:  " . "</td><td>Prize Diamond:  " . "</td>
+		<td>Prize Cash:  " . "</td></tr>";
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>id: " . $row["id"]. "</td><td>Name: " . $row["name_id"]. "</td><td>Firepower:  " . $row["firepower"].  
-		"</td><td>Shield:  " . $row["shield"]. "</td><td>Hull: " . $row["hull"]. "</td><td>Shield Regeneration:  " . $row["shield_rege"].
-		"</td><td>Hull Regeneration: " . $row["hull_rege"]. "</td><td>Prize metal : " . $row["prize_metal"]. 
-		"</td><td>Prize fuel:  " . $row["prize_fuel"]."</td><td>Prize Diamond:  " . $row["prize_diamond"].
-		"</td><td>Prize Cash:  " . $row["prize_cash"]. "</td></tr>";
+        echo "<tr><td>" . $row["id"]. "</td><td>" . $row["name_id"]. "</td><td>" . $row["firepower"].  
+		"</td><td>" . $row["shield"]. "</td><td>" . $row["hull"]. "</td><td>" . $row["shield_rege"].
+		"</td><td>" . $row["hull_rege"]. "</td><td>" . $row["prize_metal"]. 
+		"</td><td>" . $row["prize_fuel"]."</td><td>" . $row["prize_diamond"].
+		"</td><td>" . $row["prize_cash"]. "</td></tr>";
 	//Make Variables from row data
 	$id=$row["id"];
 	$hull=$row["hull"];
