@@ -4,8 +4,12 @@ php:
     - 5.3
     - 5.4
 
-script: phpunit tiedon_lisaaminen.html
+before_script:
+    - travis_retry composer self-update
+    - travis_retry composer install --no-interaction --prefer-source --dev
 
+script:
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+    - bash <(curl -s https://codecov.io/bash) -t 93ba9045-2f86-4b4a-8ef4-b4e4713f4f01
