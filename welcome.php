@@ -1,3 +1,6 @@
+<phpunit>
+  
+
 <?php
 	include('session.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
@@ -9,7 +12,12 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<html">
+<logging>
+        <log type="coverage-clover" target="clover.xml"/>
+    </logging>
+</phpunit>
+
+<html>
    
    <head>
       <title>Welcome </title>
