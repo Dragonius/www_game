@@ -4,4 +4,8 @@ php:
     - 5.3
     - 5.4
 
-script: phpunit welcome.php
+script: phpunit 
+
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
