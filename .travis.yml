@@ -4,7 +4,7 @@ php:
     - 5.3
     - 5.4
 
-script: phpunit /
+script: phpunit tiedon_lisaaminen.html
 
 
 after_success:
