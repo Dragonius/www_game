@@ -79,7 +79,9 @@ if (password_verify($Pass, $hash)) {
 			</div>
 				
 		</div>
-			
+		<div style = "margin:30px">
+			<a href="./register.php">Register</a> To system
+		</div>
 	</div>
 
 	</body>
