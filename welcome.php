@@ -1,6 +1,3 @@
-<phpunit>
-  
-
 <?php
 	include('session.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
@@ -12,12 +9,7 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<logging>
-        <log type="coverage-clover" target="clover.xml"/>
-    </logging>
-</phpunit>
-
-<html>
+<html">
    
    <head>
       <title>Welcome </title>
@@ -42,6 +34,8 @@
 		echo " <B> " . $fleet_ships3["ship"] . " </B> " ;
 	}
 		?>
+	<h2><a href ="build.php">Build link</a></h2>
+	<h2><a href ="buy.php">Buy link</a></h2>
 	<h2><a href = "logout.php">Sign Out</a></h2>
    </body>
    

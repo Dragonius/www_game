@@ -13,7 +13,7 @@
 		header("location:login.php");
 	}
 
-	#k‰tytet‰‰n mallina
+	#k√yte√§√§n malna
 	#$endtime = strtotime( $timeoflastlogin ) + 600;
   	$session2=strtotime("now") - 300;
 	$session3=strtotime("now");
@@ -27,7 +27,9 @@
 	if ( $fetch2['session'] < $session2 ) {
 		session_destroy();
 		header("location:login.php");
+	mysqli_close($result);
 	}
+	
 #	else {
 #		session_destroy();
 #		header("location:login.php");
