@@ -1,7 +1,8 @@
-<?php
-   include('sql_log.php');
-   session_start();
-   
+﻿<?php
+	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
+	include('sql_log.php');
+	session_start();
+	
 	$user_check = $_SESSION['login_user'];
 	$query = "SELECT name FROM Account WHERE name='$user_check'";
 	$result=$con->query($query);
@@ -13,7 +14,7 @@
 		header("location:login.php");
 	}
 
-	#k�yteään malna
+	#käytetään mallina
 	#$endtime = strtotime( $timeoflastlogin ) + 600;
   	$session2=strtotime("now") - 300;
 	$session3=strtotime("now");
@@ -21,7 +22,7 @@
 	$result2=$con->query($query2);
 	$fetch2 = mysqli_fetch_assoc($result2);
 	#vertaa onko mysql session isompi kuin php unixtime
-    if ( $fetch2['session'] >= $session2 ) {
+	 if ( $fetch2['session'] >= $session2 ) {
 		mysqli_query($con, "update Account SET session=$session3 WHERE name='$user_check'");
 	}
 	if ( $fetch2['session'] < $session2 ) {

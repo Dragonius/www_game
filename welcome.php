@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	include('session.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;

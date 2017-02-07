@@ -1,4 +1,4 @@
-<?php echo "<a href='index.html'>Back</a><br>"; ?>
+﻿<?php echo "<a href='index.html'>Back</a><br>"; ?>
 
 <?php
 include 'sql_log.php';

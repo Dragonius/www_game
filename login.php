@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 $error='';
 	include("sql_log.php");
 	session_start();
@@ -23,7 +23,7 @@ $hash = $fetch["pass"];
 if (password_verify($Pass, $hash)) {
 		//session_register("User");
 		$_SESSION['login_user'] = $User;
-		//päivitä unixtimea tietokantaan
+		//pÃ¤ivitÃ¤ unixtimea tietokantaan
 		$session=strtotime("now");
 		$query = "update Account SET session=$session WHERE name='$User'";
 		$result=$con->query($query);
@@ -40,24 +40,7 @@ if (password_verify($Pass, $hash)) {
 	
 	<head>
 	<title>Login Page</title>
-	
-	<style type = "text/css">
-		body {
-			font-family:Arial, Helvetica, sans-serif;
-			font-size:14px;
-		}
-		
-		label {
-			font-weight:bold;
-			width:100px;
-			font-size:14px;
-		}
-		
-		.box {
-			border:#666666 solid 1px;
-		}
-	</style>
-	
+	<link rel="stylesheet" type="text/css" href="login.css">
 	</head>
 	
 	<body bgcolor = "#FFFFFF">
