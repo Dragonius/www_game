@@ -9,6 +9,16 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+// 	Tarkita mihin fleet kuuluu login_user
+	$query_buy= "select DISTINCT  Fleet.fleet from Account, Base, Fleet where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
+	$result_buy=$con->query($query_buy);
+	$fetch_buy = mysqli_fetch_assoc($result_buy);
+	$name_buy = $fetch_buy["fleet"];
+	INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0')
+	}
+?>
 <html>
    
    <head>
@@ -38,7 +48,7 @@
         echo "<tr><td>"
         . $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
         . $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
-        . $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>buy</td></tr>" ;
+        . $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td><input type ='submit' value = 'buy'/></td></tr>" ;
         }
         echo "</tr></table>";
 	$buy_avaible2->close();
