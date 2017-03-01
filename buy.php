@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$result_buy=$con->query($query_buy);
 	$fetch_buy = mysqli_fetch_assoc($result_buy);
 	$name_buy = $fetch_buy["fleet"];
-	INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0')
+	#INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0')
 	}
 ?>
 <html>
@@ -48,7 +48,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<tr><td>"
         . $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
         . $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
-        . $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td><input type ='submit' value = 'buy'/></td></tr>" ;
+        . $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
+		<form action = "" method = "post"><input type ='submit' value = 'buy'/></form></td></tr>" ;
         }
         echo "</tr></table>";
 	$buy_avaible2->close();
