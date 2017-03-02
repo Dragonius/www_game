@@ -35,26 +35,32 @@
         $buy_avaible2=$con->query($buy_avaible);
         echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
         <td>Metal</td><td>Fuel</td><td>Diamond</td><td>Cash</td>\t";
+		$buy_list3=0;
         while($buy_avaible3 = $buy_avaible2->fetch_row()) {
         echo "<tr><td>"
         . $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
         . $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
         . $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
-		<form action = '' method = 'post'><input type ='submit' value = 'buy'/></form></td></tr>" ;
+		<form action = '' method = 'post'><input type ='submit' value = '$buy_list3'/></form></td></tr>" ;
+
+		$buy_list3=$buy_list3++;
         }
         echo "</tr></table>";
 		
 	$buy_avaible2->close();
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-// 	Tarkita mihin fleet kuuluu login_user
-	#$query_buy= "INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
-	$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$buy_avaible3[0]', '0')";
-	$result_buy=$con->query($query_buy);
-	#$fetch_buy = mysqli_fetch_assoc($result_buy);
-	#$name_buy = $fetch_buy["fleet"];
+		//Listauksen jälkeen jokaiselle laivalle "oma tunniste" josta sitten se ostaa oikean
+		if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$buy_avaible3sql=$buy_avaible3[0];
+	// 	Tarkita mihin fleet kuuluu login_user
+		#$query_buy= "INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
+		$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$buy_avaible3sql', '0')";
+		$result_buy=$con->query($query_buy);
+		#$fetch_buy = mysqli_fetch_assoc($result_buy);
+		#$name_buy = $fetch_buy["fleet"];
 	
-	}
+		}
+
 ?>	
 	<h2><a href="welcome.php">Welcome link</a></h2>
 	<h2><a href="build.php">Build link</a></h2>
