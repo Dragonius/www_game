@@ -15,6 +15,8 @@ echo $con->host_info . "\n";
 echo "<br>";
 $sql = "SELECT id, name_id, firepower, shield, hull, shield_rege, hull_rege, prize_metal, prize_fuel, prize_diamond, prize_cash FROM tzcrew.Ship ORDER BY prize_cash DESC, prize_metal , prize_fuel";
 $result = $con->query($sql);
+$row_cnt = $result->num_rows;
+echo "Rows" . $row_cnt;
 echo "<table border=1>";
 if ($result->num_rows > 0) {
     // output data of each row
