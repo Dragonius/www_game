@@ -1,5 +1,6 @@
 ﻿<?php
 	include('session.php');
+	include('./Api/fleet_ships.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
 	echo "session3  " . $session3 . "<br>" ;
@@ -25,14 +26,9 @@
 		echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] . 
 		"</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]	. "</B><br>" ;
 	}
-	$fleet_ships = "select Fleet.fleet, Fleet.ship from Account, Fleet, Base, Ship where Base.fleet=Fleet.fleet and 
-	Fleet.ship=Ship.name_id and Account.base=Base.base and Account.name='$user_check'";
-	$fleet_ships2=$con->query($fleet_ships);
-	$fleet_fleet = mysqli_fetch_assoc($fleet_ships2);
-	echo "Your Current fleet: <B>" . $fleet_fleet ["fleet"] . "</B> ships: <B>" . $fleet_fleet["ship"] . "</B>"; 
-	while($fleet_ships3 = $fleet_ships2->fetch_assoc()) {
-		echo " <B> " . $fleet_ships3["ship"] . " </B> " ;
-	}
+	//	Ships_in_fleet()
+	$ships = new fleet_ships("ships");
+	$ships->Ships_in_fleet();
 		?>
 	<h2><a href ="build.php">Build link</a></h2>
 	<h2><a href ="buy.php">Buy link</a></h2>
