@@ -1,6 +1,5 @@
 ﻿<?php
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
-	include('sql_log.php');
 	session_start();
 	
 	$user_check = $_SESSION['login_user'];

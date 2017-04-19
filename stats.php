@@ -15,7 +15,7 @@ $time = microtime(TRUE);
 $mem = memory_get_usage();
 
 
-include 'sql_log.php';
+include ('sql_log.php');
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;

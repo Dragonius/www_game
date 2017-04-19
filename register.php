@@ -1,7 +1,8 @@
 ﻿<?php echo "<a href='index.html'>Back</a><br>"; ?>
 
 <?php
-include 'sql_log.php';
+include('session.php');
+include('sql_log.php');
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 
