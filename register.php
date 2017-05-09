@@ -2,7 +2,6 @@
 
 <?php
 include('session.php');
-include('sql_log.php');
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 

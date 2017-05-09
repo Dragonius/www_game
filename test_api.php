@@ -1,6 +1,6 @@
 <?php
 	include('session.php');
-	include('sql_log.php');
+	include('./Api/sql_log.php');
 	include('./Api/fleet_ships.php');
 	
 //	Ships_in_fleet()

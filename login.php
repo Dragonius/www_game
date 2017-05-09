@@ -1,6 +1,6 @@
 ﻿<?php
 $error='';
-	include("sql_log.php");
+	include("./Api/sql_log.php");
 	session_start();
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {

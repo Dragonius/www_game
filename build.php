@@ -1,6 +1,5 @@
 ﻿<?php
 	include('session.php');
-	include('sql_log.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
 	echo "session3  " . $session3 . "<br>" ;

@@ -1,4 +1,5 @@
 ﻿<?php
+	include('./Api/sql_log.php');
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 	session_start();
 	
