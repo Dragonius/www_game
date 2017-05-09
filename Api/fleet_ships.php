@@ -1,6 +1,5 @@
 <?php
 
-
 class Fleet_ships {
 	private $fleet_ships;
 
@@ -9,7 +8,9 @@ class Fleet_ships {
 	}
 
  	public function Ships_in_fleet() {
-		include('session.php');
+		include("./Api/sql_log.php");
+		$user_check = $_SESSION['login_user'];
+	
 		$fleet_ships = "select Fleet.fleet, Fleet.ship from Account, Fleet, Base, Ship where Base.fleet=Fleet.fleet and
 		Fleet.ship=Ship.name_id and Account.base=Base.base and Account.name='$user_check'";
 		$fleet_ships2=$con->query($fleet_ships);
