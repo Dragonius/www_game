@@ -13,8 +13,8 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
-	$User = mysqli_real_escape_string($con,$_POST['User']);
-	$Pass = mysqli_real_escape_string($con,$_POST['Pass']); 
+	$User=mysqli_real_escape_string($con,$_POST['User']);
+	$Pass=mysqli_real_escape_string($con,$_POST['Pass']); 
 
 $query = "SELECT pass FROM Account WHERE name='$User'";
 $result=$con->query($query);
