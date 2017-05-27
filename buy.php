@@ -1,4 +1,5 @@
 ﻿<?php
+//debug data of session data
 	include('session.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
@@ -18,6 +19,7 @@
    	<body>
 	<h1>Welcome <?php echo $login_session; ?></h1>
 <?php
+//list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
 	$resources2=$con->query($resources);
@@ -25,10 +27,12 @@
 		echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] . 
 		"</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]	. "</B><br>" ;
 	}
+//close current connection
 	$resources2->close();
 ?>
         <h2>Ships that you can buy</h2>
         <?php
+//list all ships that user can buy
         $buy_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
         prize_cash from Ship, Base, Account
         where Account.base=Base.base  and Base.money>=Ship.prize_cash and Account.name='$user_check'";
@@ -55,11 +59,12 @@
 	}
         }
         echo "</tr></table>";
-		
+//close current connection	
 	$buy_avaible2->close();
 
 
-?>	
+?>
+<!-- Import Links -->
 	<h2><a href="welcome.php">Welcome link</a></h2>
 	<h2><a href="build.php">Build link</a></h2>
 	<h2><a href="logout.php">Sign Out</a></h2>
