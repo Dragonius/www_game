@@ -1,15 +1,17 @@
 ﻿<?php
+//include import php files.
 	include('./Api/sql_log.php');
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 	session_start();
 	
+//Run check agains user vs current session
 	$user_check = $_SESSION['login_user'];
 	$query = "SELECT name FROM Account WHERE name='$user_check'";
 	$result=$con->query($query);
 	$fetch = mysqli_fetch_assoc($result);
 	$login_session = $fetch["name"];
 	
-
+//if no current session, redirect user to login page
 	if(!isset($_SESSION['login_user'])){
 		header("location:login.php");
 	}
