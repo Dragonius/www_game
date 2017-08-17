@@ -40,13 +40,15 @@
 	$buy_avaible2=$con->query($buy_avaible);
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Prize</td>\t";
+	$i=0;
 		while($buy_avaible3 = $buy_avaible2->fetch_row()) {
 		echo "<tr><td>
-		<form action = '' method = 'post'>"
+		<form action = '' name='$i' method = 'post'>"
 		. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
 		. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
 		. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
-		<input type ='submit' name = '$buy_avaible3[0]' value = '$buy_avaible3[0]'/></form></td></tr>";
+		<input type ='submit' name = '$buy_avaible3[0]' name='$i' value = '$buy_avaible3[0]'/></form></td></tr>";
+		$i++;
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$buy_avaible3sql=$buy_avaible3[0];
 // 	Tarkita mihin fleet kuuluu login_user
