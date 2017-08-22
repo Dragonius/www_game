@@ -1,5 +1,5 @@
 ﻿<?php
-ob_start("ob_gzhandler");
+//ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 ?>
@@ -15,7 +15,7 @@ $time = microtime(TRUE);
 $mem = memory_get_usage();
 
 
-include ('sql_log.php');
+include('./Api/sql_log.php');
 $con = new mysqli($servername, $username, $password, $dbname);
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
