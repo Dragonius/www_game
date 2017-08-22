@@ -41,26 +41,27 @@
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Prize</td>\t";
 	$i=0;
+	$buy_ship=0;
 		while($buy_avaible3 = $buy_avaible2->fetch_row()) {
 		echo "<tr><td>
-		<form action = '' name='$i' method = 'post'>"
+		<form action ='buy_update.php'  method = 'POST'>"
 		. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
 		. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
 		. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
-		<input type ='submit' name = '$buy_avaible3[0]' name='$i' value = '$buy_avaible3[0]'/></form></td></tr>";
+		<input type='submit'  name='buy_ship' value='$buy_avaible3[0]'></form></td></tr>";
 		$i++;
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
-	$buy_avaible3sql=$buy_avaible3[0];
+//	if($_SERVER["REQUEST_METHOD"] == "POST") {
+//	$buy_avaible3sql=$i; 
 // 	Tarkita mihin fleet kuuluu login_user
 	#$query_buy= "INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
-	$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$buy_avaible3sql', '0') ";
+//	$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$buy_avaible3sql', '0') ";
 	//$query_takecash=
 //make query 
-	$result_buy=$con->query($query_buy);
+//	$result_buy=$con->query($query_buy);
 	//$fetch_buy = mysqli_fetch_assoc($result_buy);
 	//$name_buy = $fetch_buy["fleet"];
-	echo "<font color=green> $result_buy " ,$result_buy , "</font><font color=red> $query_buy " , $query_buy , "</font><br>";
-	}
+//	echo "<font color=green> $result_buy " ,$result_buy , "</font><font color=red> $query_buy " , $query_buy , "</font><br>";
+//	}
 		}
 		echo "</tr></table>";
 //close current connection	
