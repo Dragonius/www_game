@@ -11,15 +11,18 @@
 
 ?>
 <?php
+#Jos pyydetaan Post muodossa tee nämä
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-var_dump($_POST['buy_ship']);
-$buy_ship = ($_POST['buy_ship']);
+	#Dumpaa kaikki buy_ship sisältö
+	var_dump($_POST['buy_ship']);
+	#Linkitä Post Buy_ship muuttujaksi
+	$buy_ship = ($_POST['buy_ship']);
 //	$buy_avaible3sql=$i;
-// 	Tarkita mihin fleet kuuluu login_user
-	#$query_buy= "INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
+	#Tarkita mihin fleet kuuluu login_user
+	//$query_buy= "INSERT INTO tzcrew.Fleet (`id`, `fleet`, `ship`, `damage`) VALUES ('', $fetch_buy, $buy_avaible3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
 	$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$buy_ship', '0') ";
 	//$query_takecash=
-//make query 
+	#make query 
 	$result_buy=$con->query($query_buy);
 	//$fetch_buy = mysqli_fetch_assoc($result_buy);
 	//$name_buy = $fetch_buy["fleet"];

@@ -1,17 +1,17 @@
 ﻿<?php
-//include import php files.
+	#include import php files.
 	include('./Api/sql_log.php');
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 	session_start();
 	
-//Run check agains user vs current session
+	#Run check agains user vs current session
 	$user_check = $_SESSION['login_user'];
 	$query = "SELECT name FROM Account WHERE name='$user_check'";
 	$result=$con->query($query);
 	$fetch = mysqli_fetch_assoc($result);
 	$login_session = $fetch["name"];
 	
-//if no current session, redirect user to login page
+	#if no current session, redirect user to login page
 	if(!isset($_SESSION['login_user'])){
 		header("location:login.php");
 	}
@@ -20,6 +20,7 @@
 	#$endtime = strtotime( $timeoflastlogin ) + 600;
   	$session2=strtotime("now") - 300;
 	$session3=strtotime("now");
+	#Hae tietokannasta session numero
 	$query2 = "SELECT session from Account WHERE name='$user_check'";
 	$result2=$con->query($query2);
 	$fetch2 = mysqli_fetch_assoc($result2);
@@ -32,9 +33,4 @@
 		header("location:login.php");
 	mysqli_close($result);
 	}
-	
-#	else {
-#		session_destroy();
-#		header("location:login.php");
-#	}
 ?>
