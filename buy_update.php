@@ -26,7 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$result_buy=$con->query($query_buy);
 	//$fetch_buy = mysqli_fetch_assoc($result_buy);
 	//$name_buy = $fetch_buy["fleet"];
-	echo $buy_ship . "<font color=green> $result_buy " . $result_buy . "</font><brr><font color=red>" , $query_buy , "</font><br>";
-}
+	#Debug only
+	//echo $buy_ship . "<font color=green> $result_buy " . $result_buy . "</font><brr><font color=red>" , $query_buy , "</font><br>";
+	#Move user to back buy page
+	header("location: buy.php");
+	}
 
 	?>

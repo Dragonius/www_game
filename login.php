@@ -1,39 +1,43 @@
 ﻿<?php
-//clear Error 
+#clear Error 
 $error='';
-//Include import php files
-	include("./Api/sql_log.php");
-	session_start();
-//Check is file called on post, if yes then go for user check
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
-	// username and password sent from form 
-	
-//connection errir detection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+#Include import php files
+include("./Api/sql_log.php");
+session_start();
+#Check is file called on post, if yes then go for user check
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+	# username and password sent from form 
+	#connection error detection
+	if (mysqli_connect_errno())  {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		}
+	#Run real escape string to username and password
 	$User=mysqli_real_escape_string($con, $_POST['User']);
 	$Pass=mysqli_real_escape_string($con, $_POST['Pass']); 
+	#Make query sql database 
+	$query = "SELECT pass FROM Account WHERE name='$User'";
+	$result=$con->query($query);
+	$fetch = mysqli_fetch_assoc($result);
+	#Make "pass" variable hash
+	$hash = $fetch["pass"];
 
-$query = "SELECT pass FROM Account WHERE name='$User'";
-$result=$con->query($query);
-$fetch = mysqli_fetch_assoc($result);
-$hash = $fetch["pass"];
-
-//$hash=mysql_result($result, 0);
-//check username and password against database data, if valid, login, else error
-if (password_verify($Pass, $hash)) {
+	//$hash=mysql_result($result, 0);
+	#check username and password against database data, if valid, login, else error
+	if (password_verify($Pass, $hash)) {
 		//session_register("User");
 		$_SESSION['login_user'] = $User;
-		//päivitä unixtimea tietokantaan
+		#Update unixtime to database
 		$session=strtotime("now");
+		#Make the update query to database
 		$query = "update Account SET session=$session WHERE name='$User'";
 		$result=$con->query($query);
+		#Move user to Welcome page
 		header("location: welcome.php");
-	}else {
+		}
+	else {
+		#Show error on textbox below login
 		$error = "Your Login Name or Password is invalid";
-	}
+		}
 	}
 ?>
 
