@@ -1,6 +1,6 @@
 ﻿<?php
 	include('session.php');
-	include('./Api/fleet_ships.php');
+	include('./Api/fleet_Ships.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
 	echo "session3  " . $session3 . "<br>" ;
@@ -27,7 +27,7 @@
 		"</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]	. "</B><br>" ;
 	}
 	//	Ships_in_fleet()
-	$ships = new fleet_ships("ships");
+	$ships = new fleet_Ships("ships");
 	$ships->Ships_in_fleet();
 		?>
 	<h2><a href ="build.php">Build link</a></h2>
