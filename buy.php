@@ -41,14 +41,14 @@
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Prize</td>\t";
 	$i=0;
-	$buy_ship=0;
 		while($buy_avaible3 = $buy_avaible2->fetch_row()) {
 		echo "<tr><td>
 		<form action ='buy_update.php'  method = 'POST'>"
 		. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
 		. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
 		. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
-		<input type='submit'  name='buy_ship' value='$buy_avaible3[0]'></form></td></tr>";
+		<input type='hidden' name='ship_prize' value='$buy_avaible3[7]'>
+		<input type='submit' name='buy_ship' value='$buy_avaible3[0]'></form></td></tr>";
 		$i++;
 		}
 	//if($_SERVER["REQUEST_METHOD"] == "POST") {

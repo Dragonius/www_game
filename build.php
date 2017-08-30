@@ -10,14 +10,8 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<html>
-   
-   <head>
-      <title>Welcome to Buy Ships</title>
-   </head>
-   	<body>
-	<h1>Welcome <?php echo $login_session; ?></h1>
-<?php
+<?php echo "<html><head><title>Welcome to Buy Ships</title></head><body><h1>Welcome" . $login_session . "</h1>";
+
 	#list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
@@ -30,9 +24,7 @@
 	}
 	#close current connection
 	$resources2->close();
-?>
-	<h2>Ships that you can build</h2>
-	<?php
+	echo "<h2>Ships that you can build</h2>";
 	#list all ships that user can build
 	$buy_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
 	prize_cash from Ship, Base, Account 
@@ -40,6 +32,7 @@
 	and Base.fuel>=Ship.prize_fuel and Account.name='$user_check'";
 	#make query 
 	$buy_avaible2=$con->query($buy_avaible);
+	#build table where sql data comes
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Cash</td>\t";
 	#as Long there is data -> display it on website

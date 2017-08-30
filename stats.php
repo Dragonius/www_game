@@ -2,18 +2,13 @@
 //ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
-?>
-<html>
 
-<head><title>Asemble Base</title></head>
-<body>
-
-
-<?php
 #take time 
 $time = microtime(TRUE);
 #take mem usage
 $mem = memory_get_usage();
+#Needed html and body section
+echo "<html><head><title>Asemble Base</title></head><body>";
 
 #include sql login details
 include('./Api/sql_log.php');
