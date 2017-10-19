@@ -6,9 +6,7 @@
 	echo "session3  " . $session3 . "<br>" ;
 	$diff=$session3-$fetch2['session'];
 	echo "Diffrence " . $diff . "<br>" ;
-	
 	echo "query2    " . $query2  . "<br>";
-
 ?>
 <html">
    
@@ -29,7 +27,7 @@
 	//	Ships_in_fleet()
 	$ships = new fleetships("ships");
 	$ships->Shipsinfleet();
-		?>
+	?>
 	<h2><a href = "build.php">Build link</a></h2>
 	<h2><a href = "buy.php">Buy link</a></h2>
 	<h2><a href = "logout.php">Sign Out</a></h2>

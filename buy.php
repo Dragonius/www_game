@@ -6,7 +6,6 @@
 	echo "session3  " . $session3 . "<br>" ;
 	$diff=$session3-$fetch2['session'];
 	echo "Diffrence " . $diff . "<br>" ;
-	
 	echo "query2    " . $query2  . "<br>";
 
 ?>

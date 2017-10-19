@@ -6,7 +6,6 @@
 	echo "session3  " . $session3 . "<br>" ;
 	$diff=$session3-$fetch2['session'];
 	echo "Diffrence " . $diff . "<br>" ;
-	
 	echo "query2    " . $query2  . "<br>";
 
 ?>
@@ -26,25 +25,30 @@
 	$resources2->close();
 	echo "<h2>Ships that you can build</h2>";
 	#list all ships that user can build
-	$buy_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
+	$build_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
 	prize_cash from Ship, Base, Account 
 	where Account.base=Base.base  and Base.metal>=Ship.prize_metal and Base.diamond>=Ship.prize_diamond
 	and Base.fuel>=Ship.prize_fuel and Account.name='$user_check'";
 	#make query 
-	$buy_avaible2=$con->query($buy_avaible);
+	$build_avaible2=$con->query($build_avaible);
 	#build table where sql data comes
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Cash</td>\t";
 	#as Long there is data -> display it on website
-	while($buy_avaible3 = $buy_avaible2->fetch_row()) {
-	echo "<tr><td>" 
-	. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .	"</td><td>" 
-	. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>" 
-	. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>build</td></tr>" ;
+	while($build_avaible3 = $build_avaible2->fetch_row()) {
+	echo "<tr><td>
+	<form action ='build_update.php'  method = 'POST'>"
+	. $build_avaible3[0] . "</td><td>" . $build_avaible3[1] . "</td><td>" . $build_avaible3[2] .	"</td><td>" 
+	. $build_avaible3[3] . "</td><td>" . $build_avaible3[4] . "</td><td>" . $build_avaible3[5] . "</td><td>" 
+	. $build_avaible3[6] . "</td><td>" . $build_avaible3[7] . "</td><td>
+	<input type='hidden' name='prize_metal' value='$build_avaible3[4]'>
+	<input type='hidden' name='prize_fuel' value='$build_avaible3[5]'>
+	<input type='hidden' name='prize_diamond' value='$build_avaible3[6]'>
+	<input type='submit' name='build_ship' value='$build_avaible3[0]'></form></td></tr>";
 	}
 	echo "</tr></table>";
 	#close current connection	
-	$buy_avaible2->close();
+	$build_avaible2->close();
 ?>
 <!-- Import Links -->
 	<h2><a href="welcome.php">Welcome link</a></h2>

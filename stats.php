@@ -1,4 +1,5 @@
 ﻿<?php
+#Problem with Gzipping
 //ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
@@ -90,6 +91,7 @@ if ($result->num_rows > 0) {
 	$sql2 = "Show session Status like 'Last_query_cost'";
 	#Run query
 	$result2 = $con->query($sql2);
+	// output data of each row sql session data
 	while($row = $result2->fetch_assoc()) {
 			echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
 	}
@@ -116,7 +118,9 @@ if ($result->num_rows > 0) {
 	while($row = $result2->fetch_assoc()) {
 			echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
 	}
+#If no data 
 } else {
+	#echo No data
     echo "No Questions";
 }
 echo "<br>";
@@ -125,7 +129,7 @@ printf("System status: %s\n", mysqli_stat($con));
 
 mysqli_close($con);
 
-#output time and mem usage
+#output time and mem usage , make megabytes size and microseconds to seconds
 echo	"<br>memory_get_peak_usage: ", number_format((memory_get_peak_usage(false)/1024/1024), 3, '.', ',')." MiB\n";
 echo	"<br>memory usage: ", number_format((memory_get_usage()/1024/1024), 3, '.', ',')." MiB\n";
 echo	"<br>memory diff usage: ", number_format(((memory_get_usage() - $mem)/1024/1024), 3, '.', ',')." MiB\n";
