@@ -64,11 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#Make right Query againstst "username"
 	$query_takediamond="UPDATE Base INNER JOIN Account ON Base.base=Account.base SET Base.diamond='$result_diamond' where Account.name='$user_check'";
 	#make query 
+	#Add ship to build, Ticks needed would come as building cost -> Bigger -> Longer to build
+	#Metal , fuel Diamond, Metal 1x fuel 0.5x Diamond 2x
 	$result_diamond=$con->query($query_takediamond);
+	#add ticket check and when ticket < Time add ship player list
+	#sql add > tick check -> Tick update -> if -> add , Ifnot -> skip
 	#Move user to back buy page
 //header("location: build.php");
-//	}
-//else {
-//	header("location: welcome.php");
+}
+else {
+	header("location: welcome.php");
 }
 	?>
