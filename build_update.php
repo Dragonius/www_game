@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#need to conversion to int 
 	$count = $result_current_metal->fetch_assoc();               
 	$result_current_metal = $count['metal'] ;
-	#end of conversion
+	#end of metal conversion
 	#remove metal
 	$result_metal=$result_current_metal-$prize_metal;
 	#Make right Query againstst "username"
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#need to conversion to int 
 	$count = $result_current_fuel->fetch_assoc();               
 	$result_current_fuel = $count['fuel'] ;
-	#end of conversion
+	#end of fuel conversion
 	#remove fuel
 	$result_fuel=$result_current_fuel-$prize_fuel;
 	#Make right Query againstst "username"
@@ -58,21 +58,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#need to conversion to int 
 	$count = $result_current_diamond->fetch_assoc();               
 	$result_current_diamond = $count['diamond'] ;
-	#end of conversion
+	#end of diamond conversion
 	#remove diamond
 	$result_diamond=$result_current_diamond-$prize_diamond;
 	#Make right Query againstst "username"
 	$query_takediamond="UPDATE Base INNER JOIN Account ON Base.base=Account.base SET Base.diamond='$result_diamond' where Account.name='$user_check'";
 	#make query 
+	$result_diamond=$con->query($query_takediamond);
 	#Add ship to build, Ticks needed would come as building cost -> Bigger -> Longer to build
 	#Metal , fuel Diamond, Metal 1x fuel 0.5x Diamond 2x
-	$result_diamond=$con->query($query_takediamond);
 	#add ticket check and when ticket < Time add ship player list
 	#sql add > tick check -> Tick update -> if -> add , Ifnot -> skip
+	$current_tick="SELECT UNIX_TIMESTAMP()";
+	$result_current_tick=$con->query($current_tick);
+	#need to conversion to int 
+	$count_tick = $result_current_tick->fetch_assoc();
+	$result_count_tick = $count_tick['UNIX_TIMESTAMP()'] ;
+	echo $result_count_tick , " Simple Unix timestamp<br>";
+	$result_count_tick = $result_count_tick + ($prize_diamond * 2) + $prize_metal + ($prize_fuel *0.5);
+	echo $result_count_tick, " To count things up<br>";
+	settype($result_count_tick, "integer");
+	echo $result_count_tick, "To Interger";
+	#sql query= INSERT INTO Ticker`(`id` `tick` `player` `building` `complete` `last_tick` ) VALUES ('0' 'tick_size', '$user_check' ,'$buy_ship', '0') "; 
 	#Move user to back buy page
 //header("location: build.php");
 }
-else {
-	header("location: welcome.php");
-}
+//else {
+//	header("location: welcome.php");
+//}
 	?>
