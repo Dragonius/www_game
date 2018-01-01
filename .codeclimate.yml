@@ -1,3 +1,5 @@
 plugins:
   stylelint:
     enabled: true
+  sonar-php:
+    enabled: true
