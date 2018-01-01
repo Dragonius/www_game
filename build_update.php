@@ -66,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#make query 
 	$result_diamond=$con->query($query_takediamond);
 	#Add ship to build, Ticks needed would come as building cost -> Bigger -> Longer to build
+	#Fuel is just added so its fast, Diamon needs to bee shapen do its take time 
 	#Metal , fuel Diamond, Metal 1x fuel 0.5x Diamond 2x
 	#add ticket check and when ticket < Time add ship player list
 	#sql add > tick check -> Tick update -> if -> add , Ifnot -> skip
@@ -79,7 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo $result_count_tick, " To count things up<br>";
 	settype($result_count_tick, "integer");
 	echo $result_count_tick, "To Interger";
-	#sql query= INSERT INTO Ticker`(`id` `tick` `player` `building` `complete` `last_tick` ) VALUES ('0' 'tick_size', '$user_check' ,'$buy_ship', '0') "; 
+	#like this= INSERT INTO Ticker (id ,tick ,player ,building ,complete ,last_tick ) VALUES ('0' ,'5000' ,'test1' ,'684684651' ,'1514770200' ,'0');
+	#sql query= INSERT INTO Ticker (id ,tick ,player ,building ,complete ,last_tick ) VALUES ('0' ,'tick_size' ,'$user_check' ,'$buy_ship' ,'$result_count_tick' ,'0') "; 
 	#Move user to back buy page
 //header("location: build.php");
 }
