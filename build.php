@@ -28,7 +28,8 @@
 	$build_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
 	prize_cash from Ship, Base, Account 
 	where Account.base=Base.base  and Base.metal>=Ship.prize_metal and Base.diamond>=Ship.prize_diamond
-	and Base.fuel>=Ship.prize_fuel and Account.name='$user_check'";
+	and Base.fuel>=Ship.prize_fuel and Account.name='$user_check'
+	ORDER BY prize_cash";
 	#make query 
 	$build_avaible2=$con->query($build_avaible);
 	#build table where sql data comes
