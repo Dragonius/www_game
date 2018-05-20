@@ -96,9 +96,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo $query_build;
 	$result_query_build=$con->query($query_build);
 	#Move user to back buy page
-//header("location: build.php");
+header("location: build.php");
 }
-//else {
-//	header("location: welcome.php");
-//
+else {
+	header("location: welcome.php");
+}
 	?>
