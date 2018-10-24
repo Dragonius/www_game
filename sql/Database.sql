@@ -86,10 +86,16 @@ CREATE TABLE IF NOT EXISTS `Region` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tzcrew.Region: 1 rows
+-- Dumping data for table tzcrew.Region: 4 rows
 /*!40000 ALTER TABLE `Region` DISABLE KEYS */;
 INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
-	(1, 'north_west', 'Sol', NULL);
+	(1, 'north_west', 'Sol', 50);
+INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
+	(1, 'north_east', 'Sol', 75);
+INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
+	(1, 'south_east', 'Sol', 25);
+INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
+	(1, 'south_west', 'Sol', 100);
 /*!40000 ALTER TABLE `Region` ENABLE KEYS */;
 
 -- Dumping structure for taulu tzcrew.Ship
