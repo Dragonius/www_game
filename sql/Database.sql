@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `Account` (
   `session` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ACCOUNT_UNIQUE` (`name`,`base`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='User';
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='User';
 
--- Tietojen vienti‰ ei oltu valittu.
+-- Tietojen vienti√§ ei oltu valittu.
 -- Dumping structure for taulu tzcrew.Base
 DROP TABLE IF EXISTS `Base`;
 CREATE TABLE IF NOT EXISTS `Base` (
@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `Base` (
   `region` tinytext NOT NULL,
   `galaxy` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Only 1 main base';
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='Only 1 main base';
 
--- Tietojen vienti‰ ei oltu valittu.
+-- Tietojen vienti√§ ei oltu valittu.
 -- Dumping structure for taulu tzcrew.Fleet
 DROP TABLE IF EXISTS `Fleet`;
 CREATE TABLE IF NOT EXISTS `Fleet` (
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `Fleet` (
   `ship` varchar(45) NOT NULL,
   `damage` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Dumping structure for taulu tzcrew.Galaxy
 DROP TABLE IF EXISTS `Galaxy`;
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `Galaxy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tzcrew.Galaxy: 5 rows
 /*!40000 ALTER TABLE `Galaxy` DISABLE KEYS */;
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `Region` (
   `galaxy` tinytext,
   `asteroids` smallint(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tzcrew.Region: 1 rows
 /*!40000 ALTER TABLE `Region` DISABLE KEYS */;
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `Ticker` (
   `building` mediumint(8) unsigned DEFAULT NULL,
   `complete` mediumint(8) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Tikitt‰j‰. 5 min resoluutio';
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Tikitt√§j√§. 5 min resoluutio';
 
 -- Dumping data for table tzcrew.Ticker: 0 rows
 /*!40000 ALTER TABLE `Ticker` DISABLE KEYS */;
