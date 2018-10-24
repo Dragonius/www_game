@@ -35,6 +35,9 @@ if ($dice == '3') {
 $region='south_east'; }
 if ($dice == '4') {
 $region='south_west'; }
+		
+#randomize asteroids
+$asteroids=mt_rand(1, 1000);
 
 #check unique username
 $sql = "SELECT name FROM tzcrew.Account where name='$User'";
@@ -48,7 +51,7 @@ if ($result->num_rows < 1) {
 			#check if not Base is blank
 			if (!$Base == '') {
 				$query = "INSERT INTO Account VALUES ('','$User','$hash','$Base','0')";
-				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','500','500','$region','Sol')";
+				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','500','500','$region','Sol','asteroids')";
 				$con->query($query);
 				$con->query($query2);
 				mysqli_close($con);
