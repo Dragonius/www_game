@@ -51,7 +51,7 @@ if ($result->num_rows < 1) {
 			#check if not Base is blank
 			if (!$Base == '') {
 				$query = "INSERT INTO Account VALUES ('','$User','$hash','$Base','0')";
-				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','500','500','$region','Sol','asteroids')";
+				$query2 = "INSERT INTO Base VALUES ('','$Base','','500','500','500','500','$region','Sol')";
 				$con->query($query);
 				$con->query($query2);
 				mysqli_close($con);
