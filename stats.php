@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
     $result2 = $con->query($sql2);
     // output data of each row sql session data
     while($row = $result2->fetch_assoc()) {
-            echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
+            echo "Name of variable: " . $row["Variable_name"]. " - Current Value: " . $row["Value"]."<br>";
     }
 #If no data 
 } else {
