@@ -1,6 +1,6 @@
 ﻿<?php
 #Problem with Gzipping
-//ob_start("ob_gzhandler");
+#ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
@@ -134,7 +134,8 @@ echo    "<br>memory_get_peak_usage: ", number_format((memory_get_peak_usage(fals
 echo    "<br>memory usage: ", number_format((memory_get_usage()/1024/1024), 3, '.', ',')." MiB\n";
 echo    "<br>memory diff usage: ", number_format(((memory_get_usage() - $mem)/1024/1024), 3, '.', ',')." MiB\n";
 echo    "<br>seconds: ", number_format(microtime(TRUE) - $time, 4, '.', ',');
-//ob_end_flush();
+#Stop gzippping, prolematic wont work. yet
+#ob_end_flush();
 ?>
 </body>
 </html>
