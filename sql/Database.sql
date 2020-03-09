@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Verkkotietokone:              185.52.3.33
--- Palvelinversio:               5.5.39-MariaDB-log - MariaDB Server
+-- Verkkotietokone:              127.0.0.1
+-- Palvelinversio:               10.0.21-MariaDB-log - MariaDB Server
 -- Server OS:                    Linux
--- HeidiSQL Versio:              9.3.0.5104
+-- HeidiSQL Versio:              10.2.0.5599
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,9 +27,10 @@ CREATE TABLE IF NOT EXISTS `Account` (
   `session` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ACCOUNT_UNIQUE` (`name`,`base`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='User';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='User';
 
 -- Tietojen vientiä ei oltu valittu.
+
 -- Dumping structure for taulu tzcrew.Base
 DROP TABLE IF EXISTS `Base`;
 CREATE TABLE IF NOT EXISTS `Base` (
@@ -38,12 +39,15 @@ CREATE TABLE IF NOT EXISTS `Base` (
   `fleet` varchar(45) NOT NULL,
   `metal` int(10) unsigned NOT NULL,
   `fuel` int(10) unsigned NOT NULL,
+  `diamond` int(11) unsigned NOT NULL,
+  `money` int(11) unsigned NOT NULL,
   `region` tinytext NOT NULL,
   `galaxy` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='Only 1 main base';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Only 1 main base';
 
 -- Tietojen vientiä ei oltu valittu.
+
 -- Dumping structure for taulu tzcrew.Fleet
 DROP TABLE IF EXISTS `Fleet`;
 CREATE TABLE IF NOT EXISTS `Fleet` (
@@ -52,7 +56,9 @@ CREATE TABLE IF NOT EXISTS `Fleet` (
   `ship` varchar(45) NOT NULL,
   `damage` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=634 DEFAULT CHARSET=latin1;
+
+-- Tietojen vientiä ei oltu valittu.
 
 -- Dumping structure for taulu tzcrew.Galaxy
 DROP TABLE IF EXISTS `Galaxy`;
@@ -60,21 +66,9 @@ CREATE TABLE IF NOT EXISTS `Galaxy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tzcrew.Galaxy: 5 rows
-/*!40000 ALTER TABLE `Galaxy` DISABLE KEYS */;
-INSERT INTO `Galaxy` (`id`, `name`) VALUES
-	(1, 'Sol');
-INSERT INTO `Galaxy` (`id`, `name`) VALUES
-	(2, 'Instander');
-INSERT INTO `Galaxy` (`id`, `name`) VALUES
-	(3, 'Wusher');
-INSERT INTO `Galaxy` (`id`, `name`) VALUES
-	(4, 'Astrol');
-INSERT INTO `Galaxy` (`id`, `name`) VALUES
-	(5, 'Hundo');
-/*!40000 ALTER TABLE `Galaxy` ENABLE KEYS */;
+-- Tietojen vientiä ei oltu valittu.
 
 -- Dumping structure for taulu tzcrew.Region
 DROP TABLE IF EXISTS `Region`;
@@ -84,19 +78,9 @@ CREATE TABLE IF NOT EXISTS `Region` (
   `galaxy` tinytext,
   `asteroids` smallint(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tzcrew.Region: 4 rows
-/*!40000 ALTER TABLE `Region` DISABLE KEYS */;
-INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
-	(1, 'north_west', 'Sol', 50);
-INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
-	(1, 'north_east', 'Sol', 75);
-INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
-	(1, 'south_east', 'Sol', 25);
-INSERT INTO `Region` (`id`, `region`, `galaxy`, `asteroids`) VALUES
-	(1, 'south_west', 'Sol', 100);
-/*!40000 ALTER TABLE `Region` ENABLE KEYS */;
+-- Tietojen vientiä ei oltu valittu.
 
 -- Dumping structure for taulu tzcrew.Ship
 DROP TABLE IF EXISTS `Ship`;
@@ -113,73 +97,88 @@ CREATE TABLE IF NOT EXISTS `Ship` (
   `prize_diamond` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'prize_diamond=(hull * shield) * ((hull_rege +shield_rege)/2) + firepower;',
   `prize_cash` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'prize_cash=(hull * hull_rege + firepower + shield * shield_rege) * prize_diamond; ',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tzcrew.Ship: 22 rows
-/*!40000 ALTER TABLE `Ship` DISABLE KEYS */;
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(1, 'Aurus', 15, 20, 35, 1, 1, 53, 53, 715, 50050);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(2, 'Urannus', 20, 30, 40, 5, 2, 165, 210, 4220, 1055000);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(3, 'Urior', 30, 10, 10, 2, 1, 35, 55, 180, 10800);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(4, 'Roarer', 60, 40, 60, 5, 5, 430, 410, 12060, 6753600);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(5, 'Theurus', 90, 60, 80, 5, 1, 275, 430, 14490, 6810300);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(6, 'Luthia', 120, 100, 30, 2, 2, 220, 350, 6120, 2325600);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(7, 'Mistrix', 360, 400, 560, 15, 5, 5980, 7760, 2240360, 20521697600);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(8, 'Inarsis', 220, 60, 120, 5, 1, 380, 580, 21820, 13964800);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(9, 'Karkir', 5, 5, 5, 1, 1, 10, 13, 30, 450);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(10, 'Dorion', 150, 100, 50, 3, 5, 475, 575, 20150, 14105000);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(11, 'Galeca', 450, 200, 200, 4, 3, 1225, 1550, 140450, 259832500);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(12, 'Fury', 2, 2, 2, 5, 1, 8, 13, 14, 196);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(13, 'Wuthix', 160, 300, 50, 2, 5, 630, 885, 52660, 53186600);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(14, 'Listar', 50, 30, 40, 2, 1, 95, 130, 1850, 277500);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(15, 'Tok', 10, 100, 5, 5, 5, 280, 523, 2510, 1342850);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(16, 'Waspa', 50, 20, 50, 3, 1, 105, 135, 2050, 328000);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(17, 'Jansko', 80, 120, 5, 1, 5, 125, 213, 1880, 423000);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(18, 'Ziel', 400, 60, 80, 10, 3, 740, 1120, 31600, 39184000);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(19, 'Argoh', 220, 150, 230, 8, 3, 1400, 1765, 189970, 400836700);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(20, 'Lastar', 150, 80, 60, 6, 5, 615, 780, 26550, 24691500);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(21, 'Neptia', 88, 45, 200, 3, 1, 312, 323, 18088, 7651224);
-INSERT INTO `Ship` (`id`, `name_id`, `firepower`, `shield`, `hull`, `shield_rege`, `hull_rege`, `prize_metal`, `prize_fuel`, `prize_diamond`, `prize_cash`) VALUES
-	(22, 'Zyntex', 330, 480, 200, 2, 4, 1445, 1690, 288330, 602609700);
-/*!40000 ALTER TABLE `Ship` ENABLE KEYS */;
+-- Tietojen vientiä ei oltu valittu.
 
 -- Dumping structure for taulu tzcrew.Ticker
 DROP TABLE IF EXISTS `Ticker`;
 CREATE TABLE IF NOT EXISTS `Ticker` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `tick` int(11) unsigned DEFAULT NULL,
-  `player` mediumint(8) unsigned DEFAULT NULL,
-  `building` mediumint(8) unsigned DEFAULT NULL,
-  `complete` mediumint(8) unsigned DEFAULT NULL,
+  `player` varchar(50) DEFAULT NULL,
+  `building` varchar(50) DEFAULT NULL,
+  `complete` int(11) DEFAULT NULL,
+  `last_tick` int(11) DEFAULT NULL,
+  `diffrence` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Tikittäjä. 5 min resoluutio';
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1 COMMENT='Tikittäjä. 5 min resoluutio';
 
--- Dumping data for table tzcrew.Ticker: 0 rows
-/*!40000 ALTER TABLE `Ticker` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Ticker` ENABLE KEYS */;
+-- Tietojen vientiä ei oltu valittu.
+
+-- Dumping structure for tapahtuma tzcrew.Update test1_last_tick
+DROP EVENT IF EXISTS `Update test1_last_tick`;
+DELIMITER //
+CREATE DEFINER=`tzcrew`@`127.0.0.1` EVENT `Update test1_last_tick` ON SCHEDULE EVERY 5 MINUTE STARTS '2017-08-23 12:00:00' ON COMPLETION PRESERVE ENABLE COMMENT 'Update test1 Ticker.last_tick' DO BEGIN
+update tzcrew.Ticker Set Ticker.last_tick=UNIX_TIMESTAMP();
+update tzcrew.Ticker Set Ticker.diffrence=Ticker.last_tick-Ticker.complete;
+#where Ticker.id=1;
+#if ticker > build time -> add ship to player.
+#else just update ticker
+END//
+DELIMITER ;
+
+-- Dumping structure for näkymä tzcrew.z_Build_ship_view_bases
+DROP VIEW IF EXISTS `z_Build_ship_view_bases`;
+-- Luodaan tilapäinen taulu VIEW-riippuvuusvirheiden voittamiseksi
+CREATE TABLE `z_Build_ship_view_bases` (
+	`Ships_to_build` VARCHAR(45) NOT NULL COLLATE 'latin1_swedish_ci',
+	`Base` VARCHAR(45) NOT NULL COLLATE 'latin1_swedish_ci'
+) ENGINE=MyISAM;
+
+-- Dumping structure for näkymä tzcrew.z_show_bigger_complete_vs_complete
+DROP VIEW IF EXISTS `z_show_bigger_complete_vs_complete`;
+-- Luodaan tilapäinen taulu VIEW-riippuvuusvirheiden voittamiseksi
+CREATE TABLE `z_show_bigger_complete_vs_complete` (
+	`id` INT(11) UNSIGNED NOT NULL,
+	`tick` INT(11) UNSIGNED NULL,
+	`player` VARCHAR(50) NULL COLLATE 'latin1_swedish_ci',
+	`building` VARCHAR(50) NULL COLLATE 'latin1_swedish_ci',
+	`complete` INT(11) NULL,
+	`last_tick` INT(11) NULL,
+	`diffrence` BIGINT(12) NULL
+) ENGINE=MyISAM;
+
+-- Dumping structure for näkymä tzcrew.z_Show_smaller_complete_vs_las_tick
+DROP VIEW IF EXISTS `z_Show_smaller_complete_vs_las_tick`;
+-- Luodaan tilapäinen taulu VIEW-riippuvuusvirheiden voittamiseksi
+CREATE TABLE `z_Show_smaller_complete_vs_las_tick` (
+	`id` INT(11) UNSIGNED NOT NULL,
+	`tick` INT(11) UNSIGNED NULL,
+	`player` VARCHAR(50) NULL COLLATE 'latin1_swedish_ci',
+	`building` VARCHAR(50) NULL COLLATE 'latin1_swedish_ci',
+	`complete` INT(11) NULL,
+	`last_tick` INT(11) NULL
+) ENGINE=MyISAM;
+
+-- Dumping structure for näkymä tzcrew.z_Build_ship_view_bases
+DROP VIEW IF EXISTS `z_Build_ship_view_bases`;
+-- Poistetaan tilapäinen taulu ja luodaan lopullinen VIEW-rakenne
+DROP TABLE IF EXISTS `z_Build_ship_view_bases`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`tzcrew`@`127.0.0.1` SQL SECURITY DEFINER VIEW `tzcrew`.`z_Build_ship_view_bases` AS select `tzcrew`.`Ship`.`name_id` AS `Ships_to_build`,`tzcrew`.`Account`.`base` AS `Base` from ((`tzcrew`.`Ship` join `tzcrew`.`Base`) join `tzcrew`.`Account`) where ((`tzcrew`.`Account`.`base` = `tzcrew`.`Base`.`base`) and (`tzcrew`.`Base`.`metal` >= `tzcrew`.`Ship`.`prize_metal`) and (`tzcrew`.`Base`.`diamond` >= `tzcrew`.`Ship`.`prize_diamond`) and (`tzcrew`.`Base`.`fuel` >= `tzcrew`.`Ship`.`prize_fuel`)) order by `tzcrew`.`Account`.`base`;
+
+-- Dumping structure for näkymä tzcrew.z_show_bigger_complete_vs_complete
+DROP VIEW IF EXISTS `z_show_bigger_complete_vs_complete`;
+-- Poistetaan tilapäinen taulu ja luodaan lopullinen VIEW-rakenne
+DROP TABLE IF EXISTS `z_show_bigger_complete_vs_complete`;
+CREATE ALGORITHM=TEMPTABLE DEFINER=`tzcrew`@`127.0.0.1` SQL SECURITY DEFINER VIEW `tzcrew`.`z_show_bigger_complete_vs_complete` AS select `tzcrew`.`Ticker`.`id` AS `id`,`tzcrew`.`Ticker`.`tick` AS `tick`,`tzcrew`.`Ticker`.`player` AS `player`,`tzcrew`.`Ticker`.`building` AS `building`,`tzcrew`.`Ticker`.`complete` AS `complete`,`tzcrew`.`Ticker`.`last_tick` AS `last_tick`,(`tzcrew`.`Ticker`.`last_tick` - `tzcrew`.`Ticker`.`complete`) AS `diffrence` from `tzcrew`.`Ticker` where (`tzcrew`.`Ticker`.`complete` > `tzcrew`.`Ticker`.`last_tick`);
+
+-- Dumping structure for näkymä tzcrew.z_Show_smaller_complete_vs_las_tick
+DROP VIEW IF EXISTS `z_Show_smaller_complete_vs_las_tick`;
+-- Poistetaan tilapäinen taulu ja luodaan lopullinen VIEW-rakenne
+DROP TABLE IF EXISTS `z_Show_smaller_complete_vs_las_tick`;
+CREATE ALGORITHM=TEMPTABLE DEFINER=`tzcrew`@`127.0.0.1` SQL SECURITY DEFINER VIEW `tzcrew`.`z_Show_smaller_complete_vs_las_tick` AS select `tzcrew`.`Ticker`.`id` AS `id`,`tzcrew`.`Ticker`.`tick` AS `tick`,`tzcrew`.`Ticker`.`player` AS `player`,`tzcrew`.`Ticker`.`building` AS `building`,`tzcrew`.`Ticker`.`complete` AS `complete`,`tzcrew`.`Ticker`.`last_tick` AS `last_tick` from `tzcrew`.`Ticker` where (`tzcrew`.`Ticker`.`complete` < `tzcrew`.`Ticker`.`last_tick`);
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-
-
