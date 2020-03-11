@@ -10,7 +10,7 @@
 
 ?>
 <html>
-
+   
    <head>
       <title>List complete ships</title>
    </head>
@@ -18,11 +18,11 @@
     <h1>Welcome <?php echo $login_session; ?></h1>
 <?php
     #list all resources
-    $resources = "SELECT metal, fuel, money , diamond FROM Base, Account
+    $resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
     WHERE Account.name='$user_check' and Account.base=Base.base";
     $resources2=$con->query($resources);
     while($resources3 = $resources2->fetch_assoc()) {
-        echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] .
+        echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] . 
         "</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]    . "</B><br>" ;
     }
     #close current connection
@@ -33,7 +33,7 @@
     #list all ships that user can buy
     $list_complete_ships = "select tzcrew.Ticker.id AS id,tzcrew.Ticker.tick AS tick,tzcrew.Ticker.player AS player,tzcrew.Ticker.building AS building,
 tzcrew.Ticker.complete AS complete,tzcrew.Ticker.last_tick AS last_tick from tzcrew.Ticker where (tzcrew.Ticker.complete < tzcrew.Ticker.last_tick)";
-    #make query
+    #make query 
     $list_complete_ships2=$con->query($list_complete_ships);
     echo "<table border=1><tr><td>Id</td><td>Avaible Ships: </td><td>User</td><td>Name</td><td>Tick_complete</td>
     <td>Current_Tick</td>\t";
@@ -46,19 +46,19 @@ tzcrew.Ticker.complete AS complete,tzcrew.Ticker.last_tick AS last_tick from tzc
         $i++;
         }
     //if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //$list_complete_ships3sql=$i;
+    //$list_complete_ships3sql=$i; 
     #Tarkita mihin fleet kuuluu login_user
     //$query_buy= "INSERT INTO tzcrew.Fleet (id, fleet, ship, damage) VALUES ('', $fetch_buy, $list_complete_ships3[0], '0') where Account.base=Base.base and Base.fleet=Fleet.fleet and Account.name='$user_check'";
     //$query_buy= "INSERT INTO Fleet(fleet, ship, damage) VALUES ('fleet1', '$list_complete_ships3sql', '0') ";
     //$query_takecash=
-    #make query
+    #make query 
     //$result_buy=$con->query($query_buy);
     //$fetch_buy = mysqli_fetch_assoc($result_buy);
     //$name_buy = $fetch_buy["fleet"];
     //echo "<font color=green> $result_buy " ,$result_buy , "</font><font color=red> $query_buy " , $query_buy , "</font><br>";
     //}
     echo "</tr></table>";
-//close current connection
+//close current connection    
     $list_complete_ships2->close();
 
 
@@ -68,5 +68,5 @@ tzcrew.Ticker.complete AS complete,tzcrew.Ticker.last_tick AS last_tick from tzc
     <h2><a href="build.php">Build link</a></h2>
     <h2><a href="logout.php">Sign Out</a></h2>
    </body>
-
+ 
 </html>

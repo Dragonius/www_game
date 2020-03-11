@@ -1,6 +1,6 @@
 ﻿<?php
 #Problem with Gzipping
-#ob_start("ob_gzhandler");
+//ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
@@ -17,7 +17,7 @@ include('./Api/sql_log.php');
 $con = new mysqli($servername, $username, $password, $dbname);
 #test Errors on connection
 if ($con->connect_errno) {
-    #If connection failed , print error
+	#If connection failed , print error
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 #Echo connection info
@@ -30,13 +30,13 @@ $result = $con->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        #echo output
+		#echo output
         echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Pass:  " . $row["pass"].  " - Base:  " . $row["base"].
-         " - Session:  " . $row["session"]."<br>";
+		 " - Session:  " . $row["session"]."<br>";
     }
 #If no data 
 } else {
-    #echo No data
+	#echo No data
     echo "Account 0 results";
 }
 #Line break
@@ -50,11 +50,11 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "id: " . $row["id"]. " - Base: " . $row["base"]. " - Fleet:  " . $row["fleet"].
-        " - Metal:  " . $row["metal"]." - Fuel:  " . $row["fuel"]." - Region:  " . $row["region"]." - Galaxy:  " . $row["galaxy"]."<br>";
+		" - Metal:  " . $row["metal"]." - Fuel:  " . $row["fuel"]." - Region:  " . $row["region"]." - Galaxy:  " . $row["galaxy"]."<br>";
     }
 #If no data 
 } else {
-    #echo No data
+	#echo No data
     echo "Base 0 results";
 }
 echo "<br>";
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
     }
 #If no data 
 } else {
-    #echo No data
+	#echo No data
     echo "Fleet 0 results";
 }
 echo "<br>";
@@ -83,21 +83,21 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "id: " . $row["id"]. " - Name: " . $row["name_id"]. " - Firepower:  " . $row["firepower"].  " - Shield:  " . $row["shield"].
-        " - Hull: " . $row["hull"]. " - Shield Regeneration:  " . $row["shield_rege"].  " - Hull Regeneration: " . $row["hull_rege"].
-        "- Prize metal : " . $row["prize_metal"]. " - Prize fuel:  " . $row["prize_fuel"].
-        "- Prize diamond : " . $row["prize_diamond"]. " - Prize cash:  " . $row["prize_cash"]."<br>";
+		" - Hull: " . $row["hull"]. " - Shield Regeneration:  " . $row["shield_rege"].  " - Hull Regeneration: " . $row["hull_rege"].
+		"- Prize metal : " . $row["prize_metal"]. " - Prize fuel:  " . $row["prize_fuel"].
+		"- Prize diamond : " . $row["prize_diamond"]. " - Prize cash:  " . $row["prize_cash"]."<br>";
     }
-    #Show Cost of last query
-    $sql2 = "Show session Status like 'Last_query_cost'";
-    #Run query
-    $result2 = $con->query($sql2);
-    // output data of each row sql session data
-    while($row = $result2->fetch_assoc()) {
-            echo "Name of variable: " . $row["Variable_name"]. " - Current Value: " . $row["Value"]."<br>";
-    }
+	#Show Cost of last query
+	$sql2 = "Show session Status like 'Last_query_cost'";
+	#Run query
+	$result2 = $con->query($sql2);
+	// output data of each row sql session data
+	while($row = $result2->fetch_assoc()) {
+			echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
+	}
 #If no data 
 } else {
-    #echo No data
+	#echo No data
     echo "Ship 0 results";
 }
 echo "<br>";
@@ -109,18 +109,18 @@ $result = $con->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
-    }
-    #Show Cost of last query
-    $sql2 = "Show session Status like 'Last_query_cost'";
-    #Run query
-    $result2 = $con->query($sql2);
-    while($row = $result2->fetch_assoc()) {
-            echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
-    }
+		echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
+	}
+	#Show Cost of last query
+	$sql2 = "Show session Status like 'Last_query_cost'";
+	#Run query
+	$result2 = $con->query($sql2);
+	while($row = $result2->fetch_assoc()) {
+			echo "Variable name: " . $row["Variable_name"]. " - Value: " . $row["Value"]."<br>";
+	}
 #If no data 
 } else {
-    #echo No data
+	#echo No data
     echo "No Questions";
 }
 echo "<br>";
@@ -130,12 +130,11 @@ printf("System status: %s\n", mysqli_stat($con));
 mysqli_close($con);
 
 #output time and mem usage , make megabytes size and microseconds to seconds
-echo    "<br>memory_get_peak_usage: ", number_format((memory_get_peak_usage(false)/1024/1024), 3, '.', ',')." MiB\n";
-echo    "<br>memory usage: ", number_format((memory_get_usage()/1024/1024), 3, '.', ',')." MiB\n";
-echo    "<br>memory diff usage: ", number_format(((memory_get_usage() - $mem)/1024/1024), 3, '.', ',')." MiB\n";
-echo    "<br>seconds: ", number_format(microtime(TRUE) - $time, 4, '.', ',');
-#Stop gzippping, prolematic wont work. yet
-#ob_end_flush();
+echo	"<br>memory_get_peak_usage: ", number_format((memory_get_peak_usage(false)/1024/1024), 3, '.', ',')." MiB\n";
+echo	"<br>memory usage: ", number_format((memory_get_usage()/1024/1024), 3, '.', ',')." MiB\n";
+echo	"<br>memory diff usage: ", number_format(((memory_get_usage() - $mem)/1024/1024), 3, '.', ',')." MiB\n";
+echo	"<br>seconds: ", number_format(microtime(TRUE) - $time, 4, '.', ',');
+//ob_end_flush();
 ?>
 </body>
 </html>
