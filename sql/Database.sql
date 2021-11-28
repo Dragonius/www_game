@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `Account` (
   `session` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ACCOUNT_UNIQUE` (`name`,`base`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='User';
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COMMENT='User';
 
 -- Tietojen vientiä ei oltu valittu.
 
