@@ -16,20 +16,6 @@
 		header("location:login.php");
 	}
 
-	#Fetch Base
-	$user_check = $_SESSION['login_user'];
-        $query = "SELECT Base.base FROM Account,Base WHERE name='$user_check' && Account.base=Base.base LIMIT 1";
-        $result=$con->query($query);
-        $fetch = mysqli_fetch_assoc($result);
-        $Base_data = $fetch["base"];
-
-	#Fetch Fleet
-	$user_check = $_SESSION['login_user'];
-        $query = "SELECT Fleet.fleet FROM Account,Base,Fleet WHERE name='$user_check' && Account.base=Base.base && Base.fleet=Fleet.fleet LIMIT 1";
-        $result=$con->query($query);
-        $fetch = mysqli_fetch_assoc($result);
-        $Fleet_data = $fetch["fleet"];
-
 	#käytetään mallina
 	#$endtime = strtotime( $timeoflastlogin ) + 600;
   	$session2=strtotime("now") - 300;

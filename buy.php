@@ -32,16 +32,14 @@
 	<h2>Ships that you can buy</h2>
 	<?php
 	#list all ships that user can buy
-	$buy_avaible = "Select DISTINCT name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
-	prize_cash, Fleet.fleet from Ship, Base, Account, Fleet
-	where Account.base=Base.base  and Base.money>=Ship.prize_cash and Account.name='$user_check' && Base.base='$Base_data' && Fleet.fleet='$Fleet_data'";
+	$buy_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
+	prize_cash from Ship, Base, Account
+	where Account.base=Base.base  and Base.money>=Ship.prize_cash and Account.name='$user_check'";
 	#make query 
 	$buy_avaible2=$con->query($buy_avaible);
-	#make check what fleet user have
-	#$buy_avaible_fleet = "select tzcrew.Accoount.name,Fleet.fleet FROM Account,Base,Fleet WHERE Account.name='$user_check' && Account.base=Base.base && Base.fleet=Fleet.fleet LIMIT 1;";
 	echo "<table border=1><tr><td>Avaible Ships: </td><td>Firepower</td><td>Shield</td><td>Hull</td>
 	<td>Metal</td><td>Fuel</td><td>Diamond</td><td>Prize</td>\t";
-	$i=0;		
+	$i=0;
 		while($buy_avaible3 = $buy_avaible2->fetch_row()) {
 		echo "<tr><td>
 		<form action ='buy_update.php'  method = 'POST'>"
@@ -49,7 +47,6 @@
 		. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
 		. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
 		<input type='hidden' name='ship_prize' value='$buy_avaible3[7]'>
-		<input type='hidden' name='ship_fleet' value='$buy_avaible3[8]'>
 		<input type='submit' name='buy_ship' value='$buy_avaible3[0]'></form></td></tr>";
 		$i++;
 		}
