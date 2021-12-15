@@ -13,7 +13,7 @@
 
 
 -- Dumping database structure for tzcrew
-DROP DATABASE IF EXISTS 'tzcrew';
+DROP DATABASE IF EXISTS tzcrew;
 CREATE DATABASE IF NOT EXISTS `tzcrew` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tzcrew`;
 
