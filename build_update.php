@@ -10,14 +10,14 @@
 
 ?>
 <?php
-#Jos pyydetaan Post muodossa tee nämä
+#Jos pyydetaan Post muodossa tee nÃ¤mÃ¤
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	#Dumpaa kaikki buy_ship sisältö
+	#Dumpaa kaikki buy_ship sisÃ¤ltÃ¶
 	//var_dump($_POST['build_ship']);
 	//var_dump($_POST['prize_metal']);
 	//var_dump($_POST['prize_fuel']);
 	//var_dump($_POST['prize_diamond']);	
-	#Linkitä Post Buy_ship muuttujaksi
+	#LinkitÃ¤ Post Buy_ship muuttujaksi
 	$build_ship = ($_POST['build_ship']);
 	#Need to converter to Int
 	#$ship_prize = ($_POST['ship_prize']);

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	#include import php files.
 	include('./Api/sql_log.php');
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";

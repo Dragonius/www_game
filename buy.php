@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	#debug data of session data
 	include('session.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
