@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	include('session.php');
 	include('./Api/fleet_ships.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";

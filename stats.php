@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 #Problem with Gzipping
 //ob_start("ob_gzhandler");
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 #clear Error 
 $error='';
 #Include import php files

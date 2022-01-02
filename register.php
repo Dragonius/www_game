@@ -1,4 +1,4 @@
-﻿<?php echo "<a href='index.html'>Back</a><br>"; ?>
+<?php echo "<a href='index.html'>Back</a><br>"; ?>
 
 <?php
 include('session.php');
@@ -35,9 +35,6 @@ if ($dice == '3') {
 $region='south_east'; }
 if ($dice == '4') {
 $region='south_west'; }
-		
-#randomize asteroids
-$asteroids=mt_rand(1, 1000);
 
 #check unique username
 $sql = "SELECT name FROM tzcrew.Account where name='$User'";

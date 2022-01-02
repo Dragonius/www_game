@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 
 <head><title>Asemble Base</title></head>
 <body>
