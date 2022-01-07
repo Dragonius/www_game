@@ -16,9 +16,9 @@ class Listallresou {
         WHERE Account.name='$user_check' 
         AND Account.base=Base.base";
 	#make query 
-	$listallresou2=$con->query($listallresou);
+	    $listallresou2=$con->query($listallresou);
 	#as Long there is data -> display it on website
-	while($listallresou3 = $listallresou2->fetch_assoc()) {
+	    while($listallresou3 = $listallresou2->fetch_assoc()) {
 		echo "Your Current resources:
          Metal <B>" . $listallresou3["metal"]
          . "</B> Fuel <B>" . $listallresou3["fuel"]
