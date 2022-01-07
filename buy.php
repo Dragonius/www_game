@@ -17,7 +17,7 @@
    </head>
    	<body>
 	<h1>Welcome <?php echo $login_session; ?></h1>
-	
+
 	<!-- Import Links -->
 	<h2><a href="welcome.php">Welcome link</a></h2>
 	<h2><a href="build.php">Build link</a></h2>
@@ -50,7 +50,7 @@
 		while($buy_avaible3 = $buy_avaible2->fetch_row()) {
 		echo "<tr><td>
 		<form action ='buy_update.php'  method = 'POST'>"
-		. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] .  "</td><td>"
+		. $buy_avaible3[0] . "</td><td>" . $buy_avaible3[1] . "</td><td>" . $buy_avaible3[2] . "</td><td>"
 		. $buy_avaible3[3] . "</td><td>" . $buy_avaible3[4] . "</td><td>" . $buy_avaible3[5] . "</td><td>"
 		. $buy_avaible3[6] . "</td><td>" . $buy_avaible3[7] . "</td><td>
 		<input type='hidden' name='ship_prize' value='$buy_avaible3[7]'>

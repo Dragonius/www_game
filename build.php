@@ -51,7 +51,7 @@
 	while($build_avaible3 = $build_avaible2->fetch_row()) {
 	echo "<tr><td>
 	<form action ='build_update.php'  method = 'POST'>"
-	. $build_avaible3[0] . "</td><td>" . $build_avaible3[1] . "</td><td>" . $build_avaible3[2] .	"</td><td>" 
+	. $build_avaible3[0] . "</td><td>" . $build_avaible3[1] . "</td><td>" . $build_avaible3[2] . "</td><td>" 
 	. $build_avaible3[3] . "</td><td>" . $build_avaible3[4] . "</td><td>" . $build_avaible3[5] . "</td><td>" 
 	. $build_avaible3[6] . "</td><td>" . $build_avaible3[7] . "</td><td>
 	<input type='hidden' name='prize_metal' value='$build_avaible3[4]'>
