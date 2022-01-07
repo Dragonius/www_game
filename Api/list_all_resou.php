@@ -1,4 +1,14 @@
 <?php
+
+class Listallresou {
+	private $listallresou;
+
+	public function __construct($listallresou) {
+		$this->listallresou = $listallresou;
+	}
+
+ 	public function Listallresout() {
+		include("./Api/sql_log.php");
 	#list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
@@ -11,4 +21,6 @@
 	}
 	#close current connection
 	$resources2->close();
-    ?>
+}
+}
+?>
