@@ -7,20 +7,27 @@ class Listallresou {
 		$this->listallresou = $listallresou;
 	}
 
- 	public function Listallresout() {
+ 	public function Listallresou() {
 		include("./Api/sql_log.php");
+        $user_check = $_SESSION['login_user'];
 	#list all resources
-	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
-	WHERE Account.name='$user_check' and Account.base=Base.base";
+	    $listallresou = "SELECT metal, fuel, money , diamond 
+        FROM Base, Account 
+        WHERE Account.name='$user_check' 
+        AND Account.base=Base.base";
 	#make query 
-	$resources2=$con->query($resources);
+	$listallresou2=$con->query($listallresou);
 	#as Long there is data -> display it on website
-	while($resources3 = $resources2->fetch_assoc()) {
-		echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] . 
-		"</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]	. "</B><br>" ;
+	while($listallresou3 = $listallresou2->fetch_assoc()) {
+		echo "Your Current resources:
+         Metal <B>" . $listallresou3["metal"]
+         . "</B> Fuel <B>" . $listallresou3["fuel"]
+         . "</B> Diamond <B>" . $listallresou3["diamond"]
+         . "</B> Money <B>" . $listallresou3["money"]
+         . "</B><br>" ;
 	}
 	#close current connection
-	$resources2->close();
+	$listallresou2->close();
 }
 }
 ?>
