@@ -9,8 +9,20 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<?php echo "<html><head><title>Welcome to Buy Ships</title></head><body><h1>Welcome" . $login_session . "</h1>";
+<html>
+	<head>
+	<title>Welcome to Buy Ships</title>
+	</head>
+   	<body>
+	<h1>Welcome <?php echo $login_session; ?></h1>
 
+	<!-- Import Links -->
+	<h2><a href="welcome.php">Welcome link</a></h2>
+	<h2><a href="buy.php">Buy link</a></h2>
+	<h2><a href="logout.php">Sign Out</a></h2>
+	<body>
+
+<?php
 	#list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
@@ -51,10 +63,7 @@
 	#close current connection	
 	$build_avaible2->close();
 ?>
-<!-- Import Links -->
-	<h2><a href="welcome.php">Welcome link</a></h2>
-	<h2><a href="buy.php">Buy link</a></h2>
-	<h2><a href="logout.php">Sign Out</a></h2>
+
    </body>
    
 </html>

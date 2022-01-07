@@ -17,6 +17,11 @@
    </head>
    	<body>
 	<h1>Welcome <?php echo $login_session; ?></h1>
+	
+	<!-- Import Links -->
+	<h2><a href="welcome.php">Welcome link</a></h2>
+	<h2><a href="build.php">Build link</a></h2>
+	<h2><a href="logout.php">Sign Out</a></h2>
 <?php
 	#list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
@@ -71,10 +76,7 @@
 
 
 ?>
-<!-- Import Links -->
-	<h2><a href="welcome.php">Welcome link</a></h2>
-	<h2><a href="build.php">Build link</a></h2>
-	<h2><a href="logout.php">Sign Out</a></h2>
+
    </body>
  
 </html>
