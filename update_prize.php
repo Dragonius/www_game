@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <html>
 
 <head><title>Asemble Base</title></head>
@@ -68,6 +69,8 @@ mysqli_close($con);
 ?>
 </body>
 =======
+=======
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 <html>
 
 <head><title>Asemble Base</title></head>

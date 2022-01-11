@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 session_start();
 //Destroy session, No tested yet beacuse of 5 min timer
@@ -9,6 +10,8 @@ session_start();
    }
 
 =======
+=======
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 <?php
 session_start();
 //Destroy session, No tested yet beacuse of 5 min timer
@@ -18,5 +21,8 @@ session_start();
       header("Location: login.php");
    }
 
+<<<<<<< HEAD
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
+=======
 >>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 ?>

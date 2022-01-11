@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 #Problem with Gzipping
 //ob_start("ob_gzhandler");
@@ -139,6 +140,8 @@ echo	"<br>seconds: ", number_format(microtime(TRUE) - $time, 4, '.', ',');
 ?>
 </body>
 =======
+=======
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 <?php
 #Problem with Gzipping
 //ob_start("ob_gzhandler");

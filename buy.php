@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	#debug data of session data
 	include('session.php');
@@ -82,6 +83,9 @@
 </html>
 =======
 ﻿<?php
+=======
+<?php
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 =======
 <?php
 >>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6

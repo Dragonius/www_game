@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 	include('session.php');
 	include('./Api/fleet_ships.php');
@@ -36,6 +37,8 @@
    
 </html>
 =======
+=======
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 <?php
 	include('session.php');
 	include('./Api/fleet_ships.php');
