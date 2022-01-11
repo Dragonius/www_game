@@ -10,12 +10,12 @@
 
 ?>
 <?php
-#Jos pyydetaan Post muodossa tee nämä
+#Jos pyydetaan Post muodossa tee nÃ¤mÃ¤
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	#Dumpaa kaikki buy_ship sisältö
+	#Dumpaa kaikki buy_ship sisÃ¤ltÃ¶
 	#var_dump($_POST['buy_ship']);
 	#var_dump($_POST['ship_prize']);
-	#Linkitä Post Buy_ship muuttujaksi
+	#LinkitÃ¤ Post Buy_ship muuttujaksi
 	$buy_ship = ($_POST['buy_ship']);
 	#Hae Ship_fleet
 	$ship_fleet= ($_POST['ship_fleet']);
