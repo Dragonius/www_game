@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php echo "<a href='index.html'>Back</a><br>"; ?>
 
 <?php
@@ -94,6 +95,9 @@ else {	mysqli_close($con);	header("location:tiedon_lisaaminen.html");   }
 
 =======
 ﻿<?php echo "<a href='index.html'>Back</a><br>"; ?>
+=======
+<?php echo "<a href='index.html'>Back</a><br>"; ?>
+>>>>>>> 20a6d7934d583cab22eb69a38878c7021576e9f6
 
 <?php
 include('session.php');

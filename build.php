@@ -9,8 +9,20 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<?php echo "<html><head><title>Welcome to Buy Ships</title></head><body><h1>Welcome" . $login_session . "</h1>";
+<html>
+	<head>
+	<title>Welcome to Buy Ships</title>
+	</head>
+   	<body>
+	<h1>Welcome <?php echo $login_session; ?></h1>
 
+	<!-- Import Links -->
+	<h2><a href="welcome.php">Welcome link</a></h2>
+	<h2><a href="buy.php">Buy link</a></h2>
+	<h2><a href="logout.php">Sign Out</a></h2>
+	<body>
+
+<?php
 	#list all resources
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
@@ -39,7 +51,7 @@
 	while($build_avaible3 = $build_avaible2->fetch_row()) {
 	echo "<tr><td>
 	<form action ='build_update.php'  method = 'POST'>"
-	. $build_avaible3[0] . "</td><td>" . $build_avaible3[1] . "</td><td>" . $build_avaible3[2] .	"</td><td>" 
+	. $build_avaible3[0] . "</td><td>" . $build_avaible3[1] . "</td><td>" . $build_avaible3[2] . "</td><td>" 
 	. $build_avaible3[3] . "</td><td>" . $build_avaible3[4] . "</td><td>" . $build_avaible3[5] . "</td><td>" 
 	. $build_avaible3[6] . "</td><td>" . $build_avaible3[7] . "</td><td>
 	<input type='hidden' name='prize_metal' value='$build_avaible3[4]'>
@@ -51,10 +63,7 @@
 	#close current connection	
 	$build_avaible2->close();
 ?>
-<!-- Import Links -->
-	<h2><a href="welcome.php">Welcome link</a></h2>
-	<h2><a href="buy.php">Buy link</a></h2>
-	<h2><a href="logout.php">Sign Out</a></h2>
+
    </body>
    
 </html>
