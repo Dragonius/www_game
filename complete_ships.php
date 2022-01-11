@@ -9,8 +9,31 @@
 	echo "query2    " . $query2  . "<br>";
 
 ?>
-<?php echo "<html><head><title>Add builded ships to player</title></head><body><h1>Welcome " . $login_session . "</h1>";
-	echo "<h2> Here Read ships to delivery</h2>";
+<html>
+   
+   <head>
+      <title>Add builded ships to player<</title>
+   </head>
+       <body>
+    <h1>Welcome <?php echo $login_session; ?></h1>
+	<!-- Import Links -->
+	<h2><a href="welcome.php">Welcome link</a></h2>
+	<h2><a href="buy.php">Buy link</a></h2>
+	<h2><a href="logout.php">Sign Out</a></h2>
+<?php
+    #list all resources
+    $resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
+    WHERE Account.name='$user_check' and Account.base=Base.base";
+    $resources2=$con->query($resources);
+    while($resources3 = $resources2->fetch_assoc()) {
+        echo "Your Current resources: Metal <B>" . $resources3["metal"] . "</B> Fuel <B>" . $resources3["fuel"] . 
+        "</B> Diamond <B>" . $resources3["diamond"] . "</B> Money <B>" . $resources3["money"]    . "</B><br>" ;
+    }
+    #close current connection
+    $resources2->close();
+?>
+	<h2> Here Read ships to delivery</h2>";
+	<?php 
 	#list all builded ships
 	$build_ready = "SELECT * FROM Ticker where complete < last_tick";
 	#make query 
@@ -45,10 +68,7 @@
 	#where Ticker.complete <= Ticker.last_tick and Ticker.player=Account.name and Account.base=Base.base 
 	#and Base.fleet=Fleet.fleet and Ticker.building!='';
 ?>
-<!-- Import Links -->
-	<h2><a href="welcome.php">Welcome link</a></h2>
-	<h2><a href="buy.php">Buy link</a></h2>
-	<h2><a href="logout.php">Sign Out</a></h2>
+
    </body>
    
 </html>
