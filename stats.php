@@ -127,6 +127,15 @@ echo "<br>";
 #Print System Status
 printf("System status: %s\n", mysqli_stat($con));
 
+echo "<br> API USAGE <hr>";
+	//	Ships_in_fleet()
+	$ships = new fleetships("ships");
+	$ships->Shipsinfleet();
+
+	$addtofleet = new addshipfleet("ships");
+	$addtofleet->Addshipstofleet();
+echo "<hr>";
+
 mysqli_close($con);
 
 #output time and mem usage , make megabytes size and microseconds to seconds
