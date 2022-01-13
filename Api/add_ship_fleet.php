@@ -11,12 +11,10 @@ class Addshipfleet {
 		include("./Api/sql_log.php");
 		$user_check = $_SESSION['login_user'];
 	#Select all fleet ships 
-		$addshipfleet = "SELECT ticker.id  AS id,
-        ticker.tick                        AS tick,
-        ticker.player                      AS player,
-        ticker.building                    AS building,
-        ticker.complete                    AS complete,
-        ticker.last_tick                   AS last_tick,
+		$addshipfleet = "SELECT ticker.id,
+        ticker.tick, ticker.player ,
+        ticker.building, ticker.complete,
+        ticker.last_tick,
         ticker.last_tick - ticker.complete AS diffrence
         FROM   ticker, base, account
         WHERE  account.name = '$user_check'
