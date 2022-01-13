@@ -27,7 +27,7 @@ class Addshipfleet {
 		#$fleetfleet = mysqli_fetch_assoc($addshipfleet2);
 		echo "Waiting to add current ships to your fleet: " ;
 		while($addshipfleet3 = $addshipfleet2->fetch_assoc()) {
-			echo " <B> " . $addshipfleet3["Ticker.building"] . " </B> " ;
+			echo " <B> " . $addshipfleet3["building"] . " </B> " ;
 	}
     #close current connection
 	$addshipfleet2->close();    
