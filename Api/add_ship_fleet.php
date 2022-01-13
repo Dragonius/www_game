@@ -23,7 +23,7 @@ class Addshipfleet {
 	#make query
 		$addshipfleet2=$con->query($addshipfleet);
 	#a lonk there are data -> display it on website
-		$fleetfleet = mysqli_fetch_assoc($addshipfleet2);
+		#$fleetfleet = mysqli_fetch_assoc($addshipfleet2);
 		echo "Waiting to add current ships to your fleet: " ;
 		while($addshipfleet3 = $addshipfleet2->fetch_assoc()) {
 			echo " <B> " . $addshipfleet3["building"] . " </B> " ;
