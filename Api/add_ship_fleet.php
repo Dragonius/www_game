@@ -13,7 +13,8 @@ class Addshipfleet {
 	#Select all fleet ships 
 		$addshipfleet = "SELECT ticker.id,
         ticker.tick, ticker.player ,
-        ticker.building, ticker.complete,
+        ticker.building AS building,
+        ticker.complete,
         ticker.last_tick,
         ticker.last_tick - ticker.complete AS diffrence
         FROM   ticker, base, account
