@@ -135,7 +135,7 @@ echo "<br> API USAGE <hr>";
 	$addtofleet = new addshipfleet("ships");
 	$addtofleet->Addshipstofleet();
 echo "End of API";
-echo "<hr>";
+echo "<hr><br>";
 
 mysqli_close($con);
 
