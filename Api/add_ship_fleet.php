@@ -13,13 +13,13 @@ class Addshipfleet {
 	#Select all fleet ships 
 		$addshipfleet = "SELECT Ticker.id,
         Ticker.tick, Ticker.player ,
-        Ticker.building AS building,
+        Ticker.building,
         Ticker.complete,
         Ticker.last_tick,
         Ticker.last_tick - Ticker.complete AS diffrence
-        FROM   ticker, base, account
-        WHERE  account.name = '$user_check'
-        AND Ticker.player = account. name
+        FROM   Ticker, Base, Account
+        WHERE  Account.name = '$user_check'
+        AND Ticker.player = Account. name
         AND Ticker.complete < Ticker.last_tick";
 	#make query
 		$addshipfleet2=$con->query($addshipfleet);
@@ -27,7 +27,7 @@ class Addshipfleet {
 		#$fleetfleet = mysqli_fetch_assoc($addshipfleet2);
 		echo "Waiting to add current ships to your fleet: " ;
 		while($addshipfleet3 = $addshipfleet2->fetch_assoc()) {
-			echo " <B> " . $addshipfleet3["building"] . " </B> " ;
+			echo " <B> " . $addshipfleet3["Ticker.building"] . " </B> " ;
 	}
     #close current connection
 	$addshipfleet2->close();    
