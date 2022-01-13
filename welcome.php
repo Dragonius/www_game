@@ -27,6 +27,10 @@
 	//	Ships_in_fleet()
 	$ships = new fleetships("ships");
 	$ships->Shipsinfleet();
+	// list on ships to add
+	
+	$addtofleet = new addshipfleet("ships");
+	$addtofleet->Addshipstofleet()
 	?>
 	<h2><a href = "build.php">Build link</a></h2>
 	<h2><a href = "buy.php">Buy link</a></h2>
