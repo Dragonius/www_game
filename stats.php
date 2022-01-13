@@ -1,8 +1,11 @@
 <?php
-#Problem with Gzipping
-//ob_start("ob_gzhandler");
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");// HTTP/1.1 
+header("Cache-Control: post-check=0, pre-check=0", false);
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+header("Pragma: no-cache");
+#Problem with Gzipping
+ob_start("ob_gzhandler");
+
 
 #take time 
 $time = microtime(TRUE);
@@ -127,6 +130,16 @@ echo "<br>";
 #Print System Status
 printf("System status: %s\n", mysqli_stat($con));
 
+echo "<br> API USAGE <hr>";
+	//	Ships_in_fleet()
+	$ships = new fleetships("ships");
+	$ships->Shipsinfleet();
+
+	$addtofleet = new addshipfleet("ships");
+	$addtofleet->Addshipstofleet();
+echo "End of API";
+echo "<hr><br>";
+
 mysqli_close($con);
 
 #output time and mem usage , make megabytes size and microseconds to seconds
@@ -134,7 +147,7 @@ echo	"<br>memory_get_peak_usage: ", number_format((memory_get_peak_usage(false)/
 echo	"<br>memory usage: ", number_format((memory_get_usage()/1024/1024), 3, '.', ',')." MiB\n";
 echo	"<br>memory diff usage: ", number_format(((memory_get_usage() - $mem)/1024/1024), 3, '.', ',')." MiB\n";
 echo	"<br>seconds: ", number_format(microtime(TRUE) - $time, 4, '.', ',');
-//ob_end_flush();
+ob_end_flush();
 ?>
 </body>
 </html>

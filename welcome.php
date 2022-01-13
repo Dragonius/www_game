@@ -1,6 +1,7 @@
 <?php
 	include('session.php');
 	include('./Api/fleet_ships.php');
+	include('./Api/add_ship_fleet.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
 	echo "session3  " . $session3 . "<br>" ;
@@ -27,6 +28,11 @@
 	//	Ships_in_fleet()
 	$ships = new fleetships("ships");
 	$ships->Shipsinfleet();
+	// list on ships to add
+	echo "<br>";
+	$addtofleet = new addshipfleet("addtofleet");
+	$addtofleet->Addshipstofleet();
+	echo "<br>";
 	?>
 	<h2><a href = "build.php">Build link</a></h2>
 	<h2><a href = "buy.php">Buy link</a></h2>
