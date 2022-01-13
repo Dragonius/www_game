@@ -1,6 +1,7 @@
 <?php
 	include('session.php');
 	include('./Api/fleet_ships.php');
+	include('./Api/add_ship_fleet.php');
 	echo "fetch2    " .	$fetch2['session'] . "<br>";
 	echo "session2  " . $session2 . "<br>" ;
 	echo "session3  " . $session3 . "<br>" ;
