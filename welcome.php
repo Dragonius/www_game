@@ -29,7 +29,7 @@
 	$ships->Shipsinfleet();
 	// list on ships to add
 	
-	$addtofleet = new addshipfleet("ships");
+	$addtofleet = new addshipfleet("addtofleet");
 	$addtofleet->Addshipstofleet()
 	?>
 	<h2><a href = "build.php">Build link</a></h2>
