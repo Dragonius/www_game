@@ -9,6 +9,8 @@
 //	$diff=$session3-$fetch2['session'];
 //	echo "Diffrence " . $diff . "<br>" ;
 //	echo "query2    " . $query2  . "<br>";
+$debug = new debugs("debug");
+$debug->Debugdata();
 ?>
 <html">
    
