@@ -8,8 +8,8 @@ class Debug_data {
 	}
 
  	public function Debugdata() {
-		include("./Api/sql_log.php");
-		include('session.php');
+		include("./sql_log.php");
+		include('./../session.php');
 		$user_check = $_SESSION['login_user'];
 	
 		echo "fetch2    " .	$fetch2['session'] . "<br>";
