@@ -17,7 +17,7 @@ include('./Api/debug.php');
 $debug = new debugs("debug");
 $debug->Debugdata();
 ?>
-<html">
+<html>
    
    <head>
       <title>Welcome </title>
