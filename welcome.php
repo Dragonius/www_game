@@ -12,10 +12,11 @@
 ?>
 
 <?php
-include('./Api/debug.php');
-
-$debug = new debugs("debug");
-$debug->Debugdata();
+// some reason debug api does not work, maybe it need sql querys inside 
+//include('./Api/debug.php');
+//
+//$debug = new debugs("debug");
+//$debug->Debugdata();
 ?>
 <html>
    
@@ -26,6 +27,7 @@ $debug->Debugdata();
 	<body>
 	<h1>Welcome <?php echo $login_session; ?></h1>
 	<?php
+	//query uuser material and display them > need to build api about it
 	$resources = "SELECT metal, fuel, money , diamond FROM Base, Account 
 	WHERE Account.name='$user_check' and Account.base=Base.base";
 	$resources2=$con->query($resources);
