@@ -10,11 +10,11 @@
 
 ?>
 <html>
-   
-   <head>
-      <title>Add builded ships to player<</title>
-   </head>
-       <body>
+
+	<head>
+	<title>Add builded ships to player<</title>
+	</head>
+	<body>
     <h1>Welcome <?php echo $login_session; ?></h1>
 	<!-- Import Links -->
 	<h2><a href="welcome.php">Welcome link</a></h2>
@@ -69,8 +69,8 @@
 	#and Base.fleet=Fleet.fleet and Ticker.building!='';
 ?>
 
-   </body>
-   
+</body>
+
 </html>
 
 

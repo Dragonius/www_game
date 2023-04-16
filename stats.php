@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		#echo output
         echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Pass:  " . $row["pass"].  " - Base:  " . $row["base"].
-		 " - Session:  " . $row["session"]."<br>";
+		" - Session:  " . $row["session"]."<br>";
     }
 #If no data 
 } else {

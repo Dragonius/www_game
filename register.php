@@ -21,10 +21,10 @@ $hash = password_hash($Pass, PASSWORD_BCRYPT, $options);
 #@mysql_select_db($dbname) or die( "Unable to select database");
 #$con = mysqli_connect($servername,$username,$password,$dbname );
 if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  
+	{
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+
 #randomize location
 $dice=mt_rand(1, 4);
 if ($dice == '1') {

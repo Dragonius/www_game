@@ -32,14 +32,14 @@
 
 	#käytetään mallina
 	#$endtime = strtotime( $timeoflastlogin ) + 600;
-  	$session2=strtotime("now") - 300;
+	$session2=strtotime("now") - 300;
 	$session3=strtotime("now");
 	#Hae tietokannasta session numero
 	$query2 = "SELECT session from Account WHERE name='$user_check'";
 	$result2=$con->query($query2);
 	$fetch2 = mysqli_fetch_assoc($result2);
 	#vertaa onko mysql session isompi kuin php unixtime
-	 if ( $fetch2['session'] >= $session2 ) {
+	if ( $fetch2['session'] >= $session2 ) {
 		mysqli_query($con, "update Account SET session=$session3 WHERE name='$user_check'");
 	}
 	if ( $fetch2['session'] < $session2 ) {

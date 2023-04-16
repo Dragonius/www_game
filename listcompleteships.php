@@ -10,11 +10,11 @@
 
 ?>
 <html>
-   
-   <head>
-      <title>List complete ships</title>
-   </head>
-       <body>
+
+    <head>
+    <title>List complete ships</title>
+    </head>
+    <body>
     <h1>Welcome <?php echo $login_session; ?></h1>
     <!-- Import Links -->
     <h2><a href="welcome.php">Welcome link</a></h2>
@@ -68,6 +68,6 @@ tzcrew.Ticker.complete AS complete,tzcrew.Ticker.last_tick AS last_tick from tzc
 
 ?>
 
-   </body>
- 
+</body>
+
 </html>

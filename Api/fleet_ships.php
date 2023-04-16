@@ -7,7 +7,7 @@ class FleetShips {
 		$this->fleetships = $fleetShips;
 	}
 
- 	public function Shipsinfleet() {
+	public function Shipsinfleet() {
 		include("./Api/sql_log.php");
 		$user_check = $_SESSION['login_user'];
 	#Select all fleet ships 

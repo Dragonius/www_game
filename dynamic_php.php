@@ -6,7 +6,7 @@
 
 function update() {
     $.get("complete_ships.php", function(data){
-          $('div#count').append(data);
+        $('div#count').append(data);
     });
     setInterval(update, 60000);
 }

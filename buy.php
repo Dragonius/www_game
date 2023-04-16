@@ -11,11 +11,11 @@
 ?>
 
 <html>
-   
-   <head>
-      <title>Welcome to Buy Ships</title>
-   </head>
-   	<body>
+
+	<head>
+	<title>Welcome to Buy Ships</title>
+	</head>
+	<body>
 	<h1>Welcome <?php echo $login_session; ?></h1>
 
 	<!-- Import Links -->
@@ -77,6 +77,6 @@
 
 ?>
 
-   </body>
- 
+</body>
+
 </html>
