@@ -11,4 +11,9 @@ Issue Count <a href="https://codeclimate.com/github/Dragonius/www_game"><img src
 <a href="https://www.openhub.net/p/www_game">Openhub</a>
 
 
-Game update to 0.4 Version WIP YMMV
+Game update to 0.5 Version
+
+Comming up: 
+test to php 8.0 version, 
+dropping support php 7.0 earlier,
+Dropping support older version mysql
