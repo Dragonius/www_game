@@ -77,26 +77,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#Change $count tick to unixtime
 	$result_count_tick = $count_tick['UNIX_TIMESTAMP()'] ;
 	#echo it up
-	echo $result_count_tick , " Simple Unix timestamp<br>";
+	#echo $result_count_tick , " Simple Unix timestamp<br>";
 	#calc count tick size
 	$result_count_tick2 = ($prize_diamond * 2) + $prize_metal + ($prize_fuel *0.5);
 	#change ticket to interger
 	settype($result_count_tick2, "integer");
 	#echo it up
-	echo $result_count_tick2, " To count things up<br>";
+	#echo $result_count_tick2, " To count things up<br>";
 	#summit it
 	$result_count_tick3 = $result_count_tick2 + $result_count_tick;
 	#change ticket to interger
 	settype($result_count_tick3, "integer");
 	#echo it up
-	echo $result_count_tick3, " To Interger<br>";
+	#echo $result_count_tick3, " To Interger<br>";
 	#like this="INSERT INTO Ticker (id ,tick ,player ,building ,complete ,last_tick ) VALUES ('0' ,'5000' ,'test1' ,'684684651' ,'1514770200' ,'0');
 	#sql query build ship
-	$query_build="INSERT INTO Ticker (id ,tick ,player ,building ,complete ,last_tick ) VALUES ('' ,'$result_count_tick2' ,'$user_check' ,'$build_ship' ,'$result_count_tick3' ,'0') "; 
-	echo $query_build;
+	$query_build="INSERT INTO Ticker (tick ,player ,building ,complete ,last_tick ) VALUES ('$result_count_tick2' ,'$user_check' ,'$build_ship' ,'$result_count_tick3' ,'0') "; 
+	#echo $query_build;
 	$result_query_build=$con->query($query_build);
 	#Move user to back buy page
-header("location: build.php");
+	header("location: build.php");
 }
 else {
 	header("location: welcome.php");
