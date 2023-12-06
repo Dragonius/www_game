@@ -37,9 +37,9 @@
 	<h2>Ships that you can buy</h2>
 	<?php
 	#list all ships that user can buy
-	$buy_avaible = "Select DISTINCT name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,
-	prize_cash, Fleet.fleet from Ship, Base, Account, Fleet
-	where Account.base=Base.base  and Base.money>=Ship.prize_cash and Account.name='$user_check' && Base.base='$Base_data' && Fleet.fleet='$Fleet_data'";
+	$buy_avaible = "Select name_id, firepower, shield, hull, prize_metal, prize_fuel, prize_diamond,prize_cash, Base.fleet
+	from Ship, Base, Account
+	where Account.base=Base.base  and Base.money>=Ship.prize_cash and Account.name='$user_check' && Base.base='$Base_data' && Base.fleet='$Fleet_data'";
 	#make query 
 	$buy_avaible2=$con->query($buy_avaible);
 	#make check what fleet user have

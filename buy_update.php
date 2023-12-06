@@ -13,8 +13,11 @@
 #Jos pyydetaan Post muodossa tee nämä
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	#Dumpaa kaikki buy_ship sisältö
+	#echo "<table><tr><td>";
 	#var_dump($_POST['buy_ship']);
+	#echo "</td><td>";
 	#var_dump($_POST['ship_prize']);
+	#echo "</td></tr></table>";
 	#Linkitä Post Buy_ship muuttujaksi
 	$buy_ship = ($_POST['buy_ship']);
 	#Hae Ship_fleet
