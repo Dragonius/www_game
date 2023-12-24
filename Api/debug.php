@@ -7,7 +7,7 @@ class Debug_data {
 		$this->Debug_data = $Debug_data;
 	}
 
- 	public function Debugdata() {
+	public function Debugdata() {
 		include("./Api/sql_log.php");
 		$user_check = $_SESSION['login_user'];
 	
