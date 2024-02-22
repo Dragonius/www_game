@@ -4,7 +4,7 @@ class FleetShips {
 	private $fleetShips;
 
 	public function __construct($fleetShips) {
-		$this->fleetships = $fleetShips;
+		$this->fleetShips = $fleetShips;
 	}
 
 	public function Shipsinfleet() {
