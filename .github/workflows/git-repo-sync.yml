@@ -3,10 +3,10 @@ name: GitlabSync
 on:
   push:
       branches:
-      - main
+      - master
   delete:
       branches:
-      - main
+      - master
 
 
 jobs:
