@@ -8,11 +8,18 @@ on:
 
 
 jobs:
-
-  pass-secret-to-action:
+  phpcompatibility_php8:
     runs-on: ubuntu-latest
     steps:
       - name: PHP Compatibility
-        uses: pantheon-systems/phpcompatibility-action@v1.0.2
+        uses: pantheon-systems/phpcompatibility-action@dev
         with:
-          test-versions: 7.4-
+          test-versions: 8.0-
+
+  phpcompatibility_php74:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PHP Compatibility
+        uses: pantheon-systems/phpcompatibility-action@v1.1.1
+        with:
+          test-versions: 7.4-8.0
