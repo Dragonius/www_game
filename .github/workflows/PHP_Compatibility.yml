@@ -3,10 +3,7 @@ name: PHP_Compatibility
 on:
   push:
       branches:
-      - main
-  delete:
-      branches:
-      - main
+        - main
 
 
 
