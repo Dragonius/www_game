@@ -1,46 +1,60 @@
 # Contributor Covenant Code of Conduct
 
-## Our Pledge
+## **Our Commitment**
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+We are committed to fostering an inclusive, welcoming, and harassment-free environment for everyone involved in our project. We pledge to make participation in our community a positive experience for all, regardless of:
 
-## Our Standards
+* Age  
+* Body size  
+* Disability  
+* Ethnicity  
+* Gender identity and expression  
+* Level of experience  
+* Nationality  
+* Personal appearance  
+* Race  
+* Religion  
+* Sexual orientation  
 
-Examples of behavior that contributes to creating a positive environment include:
+## **Our Values**
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+To create a thriving and respectful community, we value and expect:
 
-Examples of unacceptable behavior by participants include:
+* **Inclusive Language**: Communicating in a welcoming and respectful manner.  
+* **Respect for Diversity**: Honoring and embracing differing perspectives and experiences.  
+* **Constructive Feedback**: Accepting feedback with grace and offering it with the intent to build, not harm.  
+* **Community Focus**: Prioritizing the greater good of the community in all decisions and interactions.  
+* **Empathy**: Demonstrating kindness and understanding towards others.  
 
-* The use of sexualized language or imagery and unwelcome sexual attention or advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+## **Unacceptable Behavior**
 
-## Our Responsibilities
+We do not tolerate behavior that undermines our community’s integrity, including but not limited to:
 
-Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+* **Harassment**: Unwelcome advances, sexualized language or imagery, or any targeted intimidation.  
+* **Disparagement**: Trolling, insults, derogatory comments, or personal/political attacks.  
+* **Privacy Violations**: Sharing private or personal information without explicit consent.  
+* **Professional Misconduct**: Engaging in actions that would be considered inappropriate in any professional setting.  
 
-Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+## **Responsibilities of Maintainers**
 
-## Scope
+Project maintainers uphold community standards by:
 
-This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.
+1. **Defining and clarifying acceptable behavior.**  
+2. **Taking fair and consistent action in response to violations of this Code of Conduct.**  
+3. **Moderating contributions to ensure they align with these principles.**  
 
-## Enforcement
+Maintainers may edit, remove, or reject contributions that violate the Code of Conduct and have the right to enforce bans on individuals engaging in harmful behavior.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at blackerhawker@hotmail.com. The project team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+## **Scope**
 
-Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
+This Code of Conduct applies in all project spaces and any situation where individuals represent the project, such as through official email, social media, or public appearances. Specific definitions of representation may be outlined by project maintainers.
 
-## Attribution
+## **Reporting and Enforcement**
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4, available at [http://contributor-covenant.org/version/1/4][version]
+If you experience or witness unacceptable behavior, please report it to the project team at **blackerhawker@hotmail.com**. Reports will be handled confidentially, and maintainers will investigate and respond appropriately to each incident.  
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
+Maintainers are expected to act in good faith. Failure to uphold this Code of Conduct may result in disciplinary actions determined by project leadership.
+
+## **Acknowledgments**
+
+This Code of Conduct is inspired by the [Contributor Covenant](https://www.contributor-covenant.org), and we extend our gratitude to its authors for their work in shaping inclusive communities.
