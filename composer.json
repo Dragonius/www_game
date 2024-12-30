@@ -1,7 +1,13 @@
 {
     "require": {
         "php": ">=7.4",
-        "phpcompatibility/php-compatibility": "*"
+        "phpcompatibility/php-compatibility": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
     },
-"prefer-stable" : true
+"prefer-stable" : true,
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
